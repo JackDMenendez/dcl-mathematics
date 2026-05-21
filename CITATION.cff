@@ -1,14 +1,15 @@
 cff-version: 1.2.0
-message: "If you use this software, please cite it as below."
-title: "Your Paper Title"
+message: "If you use this work, please cite it as below."
+title: "Foundations of the A=1 Discrete Causal Lattice: Bipartite Octahedral Lattices in Arbitrary Dimension"
 authors:
-  - family-names: Lastname
-    given-names: Firstname
-    orcid: "https://orcid.org/0000-0000-0000-0000"
-    affiliation: "Affiliation"
+  - family-names: Menendez
+    given-names: Jack
+    orcid: "https://orcid.org/0009-0003-1166-307X"
+    affiliation: "Independent Scholar (Eugene, OR)"
 version: v0.1-DRAFT
-date-released: YYYY-MM-DD
-# At release time, fill in the Zenodo DOI assigned for this version:
+date-released: 2026-05-20
+# At release time, fill in the Zenodo DOI assigned for this version
+# (conditional on the publication decision; see CLAUDE.md):
 # doi: 10.5281/zenodo.XXXXXXXX
-repository-code: "https://github.com/USER/REPO"
+repository-code: "https://github.com/JackDMenendez/dcl-mathematics"
 license: MIT

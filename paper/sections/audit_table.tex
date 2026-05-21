@@ -6,16 +6,16 @@
 % claims are PASS / PART / STUB / FAIL --- prose elsewhere in the paper
 % should not contradict it.
 %
-% Status semantics (paste into the abstract or front-matter as well):
+% Status semantics (also stated in the front-matter of main.tex):
 %   PASS  -- derivation complete or experiment confirms the claim to
 %            stated precision.
 %   PART  -- mechanism demonstrated, full quantitative match pending;
 %            specific gaps documented in the evidence column.
-%   STUB  -- analytical result with no numerical confirmation yet,
-%            or planned experiment not yet run.
+%   STUB  -- analytical result with no full proof yet, or planned
+%            proof not yet written.
 %   FAIL  -- tested and disconfirmed.
 %
-% Use \texttt{} for code/experiment names and file paths inside cells.
+% Use \texttt{} for code/repo names and file paths inside cells.
 % Long cells are fine -- the column widths are tuned for prose.
 % ============================================================
 
@@ -26,8 +26,13 @@
 \renewcommand{\arraystretch}{0.95}
 \begin{longtable}{@{}p{2.6cm}p{3.8cm}p{3.2cm}p{4.4cm}p{1.0cm}@{}}
 \caption{\small System audit: paper claims mapped to supporting
-derivations and experiments.  Status semantics in the front-matter
-(\texttt{PASS} / \texttt{PART} / \texttt{STUB} / \texttt{FAIL}).}
+derivations and external references.  Status semantics in the
+front-matter (\texttt{PASS} / \texttt{PART} / \texttt{STUB} /
+\texttt{FAIL}).  Rows tagged ``inherited'' are upstream-of-record
+in another repository and are reproduced here only as context.
+Rows tagged ``motivating example'' describe scope deferred to
+subsequent papers; their \texttt{STUB} status is by design at v0.1
+and is not a closure target for this paper.}
 \label{tab:audit_caption} \\
 \hline
 \textbf{Claim} & \textbf{Mechanism} & \textbf{Continuum / formal limit} & \textbf{Evidence} & \textbf{Status} \\
@@ -47,20 +52,68 @@ derivations and experiments.  Status semantics in the front-matter
 \hline
 \endlastfoot
 
-% ── Example row 1 (replace with a real claim) ───────────────────────
-Example claim, fully derived
-    & One-line summary of the mechanism
-    & The standard / continuum statement it reduces to
-    & Derived analytically (\S\ref{subsec:cross_ref_example}, Eq.~\ref{eq:example_identity})
+% ── Inherited from Paper I ─────────────────────────────────────────
+Bipartite octahedral lattice as substrate (3-D, physical setting)
+    & Joint-tick rule on a bipartite octahedral lattice
+    & The lattice carries the (3+1)-D Lorentz structure (Paper~I)
+    & Paper~I (\texttt{dcl}), doi:10.5281/zenodo.20078529
     & \texttt{PASS} \\
 
-% ── Example row 2 (replace with a real claim) ───────────────────────
-Example claim, partial evidence
-    & One-line summary
-    & The target statement
-    & \texttt{exp\_XX}: describe the gap concretely (e.g.\ ``mechanism
-      reproduced; quantitative match pending higher-resolution run'')
-    & \texttt{PART} \\
+71-dim per-site automorphism algebra (3-D)
+    & Per-site automorphisms catalogued; 71-dimensional Lie algebra
+    & N/A (catalogue, not a limit theorem)
+    & \texttt{dcl-zoo}: generator-zoo repository
+    & \texttt{PASS} \\
+
+% ── Foundations-toolkit-internal (this paper's coverage) ────────────
+General bipartite octahedral lattice in dimension $n$
+    & Combinatorial definition: vertex set, edge set, parity / two-colouring, neighbour structure
+    & Recovers Paper~I's 3-D lattice at $n=3$
+    & \S\ref{sec:lattice_n_dim} (paper-text proof pending)
+    & \texttt{STUB} \\
+
+Automorphism algebra in dimension $n$
+    & Generators and commutation relations as a function of $n$; rank closed-form
+    & Recovers the 3-D 71-dim per-site algebra at $n=3$
+    & \S\ref{sec:automorphism_algebra} (paper-text proof pending; cross-reference to \texttt{dcl-zoo} for the 3-D base case)
+    & \texttt{STUB} \\
+
+Discrete differential geometry on the lattice
+    & Discrete exterior calculus: discrete forms, discrete $d$ / codifferential, discrete connections and curvature; integration by parts
+    & Recovers smooth exterior calculus in the discrete-to-continuum limit (\S\ref{sec:continuum_limits})
+    & \S\ref{sec:discrete_diff_geometry} (paper-text proof pending)
+    & \texttt{STUB} \\
+
+Function spaces on the lattice
+    & Discrete $L^p$ / $\ell^p$ spaces; Sobolev-analogue spaces $\ell^{k,p}$ with discrete-derivative norms; $n$-dependent scaling and embedding theorems
+    & Standard $L^p$ / $W^{k,p}$ in the discrete-to-continuum limit (\S\ref{sec:continuum_limits})
+    & \S\ref{sec:function_spaces} (paper-text proof pending)
+    & \texttt{STUB} \\
+
+Discrete measure theory on the lattice
+    & Counting measures, Haar-analogue measures invariant under the automorphism algebra, change-of-variables formula, discrete Radon-Nikodym
+    & Recovers Lebesgue / Haar measure in the discrete-to-continuum limit
+    & \S\ref{sec:discrete_measure_theory} (paper-text proof pending)
+    & \texttt{STUB} \\
+
+Discrete-to-continuum limit operators \emph{(the Hilbert-Sixth on-ramp)}
+    & Lattice-spacing parameter $\epsilon$ with $\epsilon \to 0$; limit topology, convergence modes (weak / strong / distributional), consistency conditions tying discrete to continuum operators
+    & Continuum operators in $\mathbb{R}^n$
+    & \S\ref{sec:continuum_limits} (paper-text proof pending; load-bearing for the planned Hilbert-Sixth capstone)
+    & \texttt{STUB} \\
+
+% ── Motivating examples (framing only at v0.1) ──────────────────────
+Boltzmann-shaped operators on the lattice \emph{(motivating example)}
+    & Discrete collision operator on the bipartite octahedral lattice; $H$-functional; equilibrium measures
+    & Continuum Boltzmann equation in the limit (\S\ref{sec:continuum_limits})
+    & \S\ref{subsec:boltzmann} (framing only; full $H$-theorem proof deferred to a subsequent paper)
+    & \texttt{STUB} \\
+
+Fluid (NS / Euler) limit ansatz \emph{(motivating example)}
+    & Discrete-to-continuum scaling that recovers the standard fluid equations from a lattice-Boltzmann limit
+    & Navier-Stokes / Euler equations in $\mathbb{R}^n$
+    & \S\ref{subsec:fluid_limit} (framing only; full convergence proof deferred to a subsequent paper)
+    & \texttt{STUB} \\
 
 \hline
 \end{longtable}

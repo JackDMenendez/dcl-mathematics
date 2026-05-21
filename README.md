@@ -1,93 +1,101 @@
-# Paper Template (paper-only)
+# dcl-mathematics
 
-A starting scaffold for a research paper, derived from the
-infrastructure of the *Geometry First* (A=1 Discrete Causal Lattice)
-project. Use this when the paper has no companion experiment code; for
-papers that ship runnable experiments and tests, use the full-stack
-sibling template instead.
+*Foundations of the A=1 Discrete Causal Lattice: Bipartite Octahedral
+Lattices in Arbitrary Dimension.*
 
-## Click "Use this template" on GitHub
+Paper-only supporting-mathematics repository in the A=1 Discrete
+Causal Lattice (DCL) series.  This repo houses the pure mathematics
+that downstream physics work in the series consumes -- theorems and
+proofs about bipartite octahedral lattices in arbitrary dimension,
+function spaces, discrete measure theory, discrete differential
+geometry, and the discrete-to-continuum limit machinery that the
+series' Hilbert-Sixth capstone will eventually synthesise.
 
-This repo is configured as a GitHub Template Repository. From the
-GitHub web UI on the template's page, click **Use this template ->
-Create a new repository**, then `git clone` the new repo locally.
+## Role in the series
 
-## What you get
+The series' physics papers each use *more* of the underlying
+mathematics than Paper I exposed, and use it in arbitrary dimension
+when the lattice is treated as a mathematical object rather than as a
+substrate for a specific physical claim.  Consolidating the
+foundational theorems here gives downstream papers a single citable
+source.
 
+| Repo | Role | Consumes from this repo |
+|---|---|---|
+| [`dcl`](https://github.com/JackDMenendez/dcl) | Paper I -- *Geometry First* | (upstream-of-record for the lattice itself) |
+| [`dcl-sm-derivation`](https://github.com/JackDMenendez/dcl-paper-02-sm-derivation) | Paper II -- *Geometry Forces Physics* | (existing; would cite this repo on next revision) |
+| [`dcl-paper-03-tidal-ionization`](https://github.com/JackDMenendez/dcl-paper-03-tidal-ionization) | Paper III -- quantum Roche limit | (in flight; may cite on revision) |
+| `dcl-formalism` (planned) | Sympy package operationalising selected theorems | this repo proves the theorems; that package implements them as primitives |
+| `dcl-paper-XX-hilbert-sixth` (planned) | Hilbert-Sixth capstone | consumes the discrete-to-continuum limit machinery (Section 6) for the axiomatisation claim |
+
+`dcl-mathematics` does not consume `dcl-core` or any package; it is
+paper-only.  Boltzmann-shaped operators and the fluid (NS / Euler)
+limit appear here as *motivating examples* for the toolkit, not as
+proof targets of the first paper -- their full treatment is left to
+subsequent papers (in this repo or in a sibling repo).
+
+## First paper -- foundations toolkit
+
+The first paper lays out the foundational mathematics that the toolkit
+collects.  Section structure (mirrors the audit-table rows in
+`paper/sections/audit_table.tex`):
+
+1. **General bipartite octahedral lattice in dimension $n$** --
+   combinatorial definition, neighbour structure, parity / two-colouring.
+2. **Automorphism algebra in dimension $n$** -- extension of the 3-D
+   71-dim per-site algebra catalogued in `dcl-zoo`; rank, generators,
+   commutation relations as a function of $n$.
+3. **Discrete differential geometry on the lattice** -- discrete
+   exterior calculus, discrete connections / curvature, integration by
+   parts.
+4. **Function spaces on the lattice** -- discrete $L^p$ /
+   Sobolev-analogues / $\ell^p$, with $n$-D scaling laws and embedding
+   theorems.
+5. **Discrete measure theory on the lattice** -- counting measures,
+   Haar-analogues for the automorphism algebra, change-of-variables.
+6. **Discrete-to-continuum limit operators** -- limit topology,
+   convergence modes (weak / strong / distributional), consistency
+   with continuum operators.  *The Hilbert-Sixth on-ramp.*
+7. **Motivating examples** -- Boltzmann-shaped operators on the
+   lattice (collision operator, H-functional, equilibrium measures);
+   fluid (NS / Euler) limit ansatz.  *Framing only -- full proofs
+   deferred to subsequent papers.*
+
+Publication is a deferred decision; see `CLAUDE.md` and issue draft
+[004-new-subproject-dcl-mathematics.md](https://github.com/JackDMenendez/discrete-causal-lattice-project/blob/main/issue-drafts/004-new-subproject-dcl-mathematics.md)
+in the project-tracking repo for the rationale.  The paper format is
+load-bearing regardless of external publication -- it is the series'
+canonical internal mathematical reference.
+
+## Status
+
+`v0.1-DRAFT` -- scaffolded from
+[`dcl-paper-template`](https://github.com/JackDMenendez/dcl-paper-template);
+audit-table rows seeded as STUB; section outlines in place.  See
+`paper/sections/audit_table.tex` for the canonical row-by-row status,
+and `CLAUDE.md` for the current next action.
+
+## Build
+
+```sh
+./build.sh paper        # POSIX / MSYS2 UCRT64 on Windows
+build.cmd paper         # Windows cmd / PowerShell
 ```
-.
-+-- paper/
-|   +-- main.tex                 -- title page, front matter, section wiring
-|   +-- macros/
-|   |   +-- packages.tex         -- LaTeX package list
-|   |   +-- commands.tex         -- theorem envs, \placeholder, \todomark
-|   +-- sections/
-|   |   +-- abstract.tex         -- placeholder
-|   |   +-- introduction.tex     -- EXEMPLAR (cross-refs, eq, figure include)
-|   |   +-- section_template.tex -- copy-and-rename for new sections
-|   |   +-- audit_table.tex      -- longtable seed, two example rows
-|   |   +-- conclusion.tex       -- placeholder
-|   |   +-- acknowledgements.tex -- placeholder
-|   |   +-- code_and_data.tex    -- appendix placeholder
-|   |   +-- reproducibility.tex  -- appendix placeholder
-|   +-- figures/
-|   |   +-- example_figure.tex   -- figure-fragment template
-|   |   +-- README.md            -- figure conventions
-|   +-- paper-bib/
-|       +-- references.bib       -- BibTeX seed
-+-- notes/                        -- working theoretical notes
-+-- release_notes/                -- per-version change log + Release body
-+-- .claude/agents/claim-auditor.md  -- read-only audit agent
-+-- CLAUDE.md                     -- project memory for Claude Code
-+-- CITATION.cff                  -- machine-readable citation
-+-- LICENSE                       -- MIT
-+-- makefile                      -- root build (paper, promote, clean)
-+-- common.mak                    -- shared make variables
-+-- build.sh / build.cmd          -- platform wrappers around make
-+-- .gitignore .gitattributes .gitmessage
-```
 
-## First steps after creating your repo
+Output: `build/Foundations_of_the_A1_Discrete_Causal_Lattice.pdf` (or
+the name resolved from `DOC_TITLE` in `makefile`).
 
-1. **Search-and-replace the placeholders** in:
-   - `paper/main.tex` -- title, author, ORCID, email, repo URL
-   - `paper/macros/packages.tex` -- pdftitle, pdfauthor, pdfsubject,
-     pdfkeywords
-   - `CITATION.cff` -- title, author, ORCID, repo URL
-   - `LICENSE` -- year and copyright holder
-   - `CLAUDE.md` -- short title, current status block
-   - `README.md` (this file) -- replace with your project's own README
-2. **Build the paper** to confirm the toolchain works:
-   ```sh
-   ./build.sh paper        # POSIX / MSYS2 UCRT64 on Windows
-   build.cmd paper         # Windows cmd / PowerShell
-   ```
-   Output: `build/Paper.pdf` (renamed via `DOC_TITLE` in the
-   `makefile`).
-3. **Replace the exemplar section** (`paper/sections/introduction.tex`)
-   with your own introduction once the patterns are no longer needed
-   as scaffolding.
-4. **Wire up new sections** by copying `paper/sections/section_template.tex`
-   to a new name and adding the corresponding `\section{...}` +
-   `\input{sections/...}` block in `paper/main.tex`.
-5. **Maintain the audit table.** Treat
-   `paper/sections/audit_table.tex` as the source of truth for which
-   claims are PASS / PART / STUB / FAIL; the claim-auditor agent in
-   `.claude/agents/` flags prose that contradicts it.
+Build requirements:
 
-## Build requirements
-
-- GNU Make >= 4.3 (the stock Windows port is too old; on Windows use
-  MSYS2 UCRT64 with `pacman -S make`).
+- GNU Make >= 4.3 (on Windows: MSYS2 UCRT64 + `pacman -S make` -- the
+  stock Windows port is too old).
 - `pdflatex` + `bibtex` (TeX Live or MiKTeX).
-
-## Release flow
-
-See `release_notes/README.md`. Short version: deposit on Zenodo
-first to get the DOI, *then* commit the version bump. The DOI is part
-of the title-page `\thanks{}` block and `CITATION.cff`.
 
 ## License
 
 Paper text and figures: CC BY 4.0.
-Source (this scaffolding): MIT (see `LICENSE`).
+Source (scaffolding, build scripts): MIT (see `LICENSE`).
+
+## Citation
+
+See `CITATION.cff`.

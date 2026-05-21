@@ -16,23 +16,21 @@
 %% ---------------------------------------------------------------
 %% TITLE PAGE
 %% ---------------------------------------------------------------
-%% TODO: replace title, subtitle, author, ORCID, email.
-%% TODO: at release time, fill in the \thanks{} block with version,
-%%       Zenodo DOI, GitHub URL, and any series identifier.
 
-\title{Your Paper Title:\\
-       Optional Subtitle on a Second Line%
+\title{Foundations of the A=1 Discrete Causal Lattice:\\
+       Bipartite Octahedral Lattices in Arbitrary Dimension%
        \thanks{Version 0.1-DRAFT.
-       %% Fill in at release time:
+       \href{https://github.com/JackDMenendez/dcl-mathematics}%
+            {GitHub: JackDMenendez/dcl-mathematics}.
+       %% Fill in at release time (conditional on publication decision):
        %% \href{https://doi.org/10.5281/zenodo.XXXXXXXX}%
        %%      {DOI: 10.5281/zenodo.XXXXXXXX}.
-       %% \href{https://github.com/USER/REPO}%
-       %%      {GitHub: USER/REPO}.
-       Pre-release draft; DOI to be assigned.}}
-\author{Author Name\\
-        \small City, State\\
-        \small ORCID: \href{https://orcid.org/0000-0000-0000-0000}{0000-0000-0000-0000}\\
-        \small \href{mailto:author@example.com}{author@example.com}}
+       Pre-release draft; DOI to be assigned if and when an external
+       publication decision is taken.}}
+\author{Jack Menendez\\
+        \small Independent Scholar, Eugene, OR\\
+        \small ORCID: \href{https://orcid.org/0009-0003-1166-307X}{0009-0003-1166-307X}\\
+        \small \href{mailto:jackdmenendez@gmail.com}{jackdmenendez@gmail.com}}
 \date{\today}
 
 \begin{document}
@@ -47,18 +45,44 @@ Attribution 4.0 (CC BY 4.0).  Source code in the companion
 repository: MIT License.
 
 \medskip
-\noindent\textbf{Data availability.}  Numerical experiments, data
-files, and the LaTeX source for this paper are publicly available at
-\href{https://github.com/USER/REPO}%
-     {\nolinkurl{github.com/USER/REPO}}.
-%% At release time, point to the tag and the Zenodo DOI:
+\noindent\textbf{Data availability.}  The LaTeX source for this paper
+is publicly available at
+\href{https://github.com/JackDMenendez/dcl-mathematics}%
+     {\nolinkurl{github.com/JackDMenendez/dcl-mathematics}}.
+This is a paper-only repository in the A=1 Discrete Causal Lattice
+(DCL) series; no numerical experiments accompany the first paper.
+%% At release time (if external publication proceeds):
 %% The exact commit corresponding to this release is the vX.Y tag,
 %% archived at
 %% \href{https://doi.org/10.5281/zenodo.XXXXXXXX}%
 %%      {\nolinkurl{doi:10.5281/zenodo.XXXXXXXX}}.
 
 \medskip
-\noindent\textbf{Keywords.}  keyword one; keyword two; keyword three.
+\noindent\textbf{Series position.}  Supporting-mathematics repository
+of the A=1 DCL series.  Upstream of the planned
+\texttt{dcl-formalism} sympy package (which operationalises selected
+theorems from this paper as machine-checked primitives) and of the
+planned Hilbert-Sixth capstone paper (Paper~I follow-on \#18, which
+consumes the discrete-to-continuum limit machinery of
+Section~\ref{sec:continuum_limits} for its axiomatisation claim).
+Downstream of Paper~I (\emph{Geometry First}, doi:10.5281/zenodo.20078529),
+the source-of-record for the bipartite octahedral lattice in its
+physical (3+1)-D setting.
+
+\medskip
+\noindent\textbf{Status legend (used throughout, including the audit
+table in Section~\ref{sec:introduction}).}  \texttt{PASS} -- derivation
+complete or experiment confirms the claim to stated precision.
+\texttt{PART} -- mechanism demonstrated, full quantitative match
+pending; specific gaps documented in the evidence column.
+\texttt{STUB} -- analytical result with no full proof yet, or proof
+planned but not yet written.  \texttt{FAIL} -- tested and
+disconfirmed.
+
+\medskip
+\noindent\textbf{Keywords.}  discrete causal lattice; bipartite
+octahedral lattice; discrete differential geometry; discrete-to-
+continuum limit; Hilbert's sixth problem; foundations of physics.
 
 \newpage
 
@@ -66,35 +90,45 @@ files, and the LaTeX source for this paper are publicly available at
     \input{sections/abstract}
 \end{abstract}
 
-%% ---------------------------------------------------------------
-%% RELEASE NOTES (only at release time)
-%% ---------------------------------------------------------------
-%% \bigskip
-%% \noindent\textbf{Release notes for vX.Y (since vX.Y-1).}
-%% \begin{itemize}
-%% \item Item 1.
-%% \item Item 2.
-%% \end{itemize}
-
-%% \emph{Status legend used throughout.}  \texttt{PASS} / \texttt{PART}
-%% / \texttt{STUB} / \texttt{FAIL} -- see Table~\ref{tab:audit}.
-
 \newpage
 \tableofcontents
 \newpage
 
 %% ============================================================
-%% PART I: <name>
+%% PART I: COMBINATORIAL FOUNDATIONS
 %% ============================================================
 \section{Introduction}
 \input{sections/introduction}
 
-\section{A Section Showing the Patterns}
-\input{sections/section_template}
+\section{The General Bipartite Octahedral Lattice in Dimension $n$}
+\input{sections/lattice_n_dim}
 
-%% Add more \section{...} \input{sections/...} blocks as needed.
-%% Group with comment dividers (e.g., "PART II: DYNAMICS") to keep
-%% main.tex skimmable as the paper grows.
+\section{Automorphism Algebra in Dimension $n$}
+\input{sections/automorphism_algebra}
+
+%% ============================================================
+%% PART II: ANALYTIC FOUNDATIONS
+%% ============================================================
+\section{Discrete Differential Geometry on the Lattice}
+\input{sections/discrete_diff_geometry}
+
+\section{Function Spaces on the Lattice}
+\input{sections/function_spaces}
+
+\section{Discrete Measure Theory on the Lattice}
+\input{sections/discrete_measure_theory}
+
+%% ============================================================
+%% PART III: THE HILBERT-SIXTH ON-RAMP
+%% ============================================================
+\section{Discrete-to-Continuum Limit Operators}
+\input{sections/continuum_limits}
+
+%% ============================================================
+%% PART IV: MOTIVATING EXAMPLES (FRAMING ONLY)
+%% ============================================================
+\section{Motivating Examples: Boltzmann and the Fluid Limit}
+\input{sections/motivating_examples}
 
 \section{Conclusion}
 \input{sections/conclusion}
