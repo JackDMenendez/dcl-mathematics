@@ -1,0 +1,145 @@
+% symbols.tex
+% Appendix -- Symbols and meanings.  Reference list of mathematical
+% symbols introduced in this paper.  Update this list whenever a new
+% standing symbol enters the body of the paper.
+%
+% Section column is the section where the symbol is first used in its
+% standing meaning.  Many symbols are reused in later sections; the
+% Section column points to the *definition*, not the most recent use.
+
+\label{sec:symbols}
+
+\placeholder{Update entries whenever a new standing symbol enters the
+body of the paper.  Many entries below are placeholders pinned to
+their planned section; the meaning is fixed by the
+\texttt{scope-and-outline} note (\texttt{notes/dcl\_mathematics\_scope\_and\_outline.md}).}
+
+{\small
+\setlength{\tabcolsep}{6pt}
+\renewcommand{\arraystretch}{1.10}
+\begin{longtable}{@{}p{2.6cm}p{8.4cm}p{3.0cm}@{}}
+\caption{\small Symbols and their meanings, with the section where
+each symbol is first defined.  Symbols introduced only inside a
+single proof or example (e.g.\ dummy summation indices) are not
+listed.}
+\label{tab:symbols} \\
+\hline
+\textbf{Symbol} & \textbf{Meaning} & \textbf{Section} \\
+\hline
+\endfirsthead
+
+\multicolumn{3}{l}{\textit{(Table~\ref{tab:symbols}, continued from previous page)}} \\
+\hline
+\textbf{Symbol} & \textbf{Meaning} & \textbf{Section} \\
+\hline
+\endhead
+
+\hline
+\multicolumn{3}{r}{\textit{(continued on next page)}} \\
+\endfoot
+
+\hline
+\endlastfoot
+
+% ── Lattice and ambient spaces ─────────────────────────────────────
+\multicolumn{3}{@{}l}{\textit{Lattice and ambient spaces}} \\
+$n$
+    & Lattice dimension; free parameter throughout the paper.  Specialised to $n = 3$ only when matching Paper~I's physical setting.
+    & \S\ref{sec:lattice_n_dim} \\
+$\Lambda_n$
+    & The bipartite octahedral lattice in dimension $n$.
+    & \S\ref{sec:lattice_n_dim} \\
+$V_n$
+    & Vertex set of $\Lambda_n$, identified with $\mathbb{Z}^n$ (provisional).
+    & \S\ref{subsec:lattice_definition} \\
+$V_n^{+}, V_n^{-}$
+    & The two colour classes of the bipartition; $V_n = V_n^{+} \sqcup V_n^{-}$.
+    & \S\ref{subsec:lattice_parity} \\
+$E_n$
+    & Edge set of $\Lambda_n$: axial $\pm e_i$ edges plus octahedral cross-edges.
+    & \S\ref{subsec:lattice_definition} \\
+$\epsilon$
+    & Lattice-spacing parameter ($\epsilon > 0$); $\epsilon \to 0$ gives the discrete-to-continuum limit.
+    & \S\ref{subsec:limit_parameter} \\
+$\epsilon \Lambda_n$
+    & Rescaled lattice $\subset \mathbb{R}^n$ with spacing $\epsilon$.
+    & \S\ref{subsec:limit_parameter} \\
+$\mathbb{R}^n$, $\mathbb{Z}^n$
+    & Continuum ambient space; integer lattice (used as vertex-set model for $\Lambda_n$).
+    & \S\ref{subsec:lattice_definition} \\
+
+% ── Symmetries ─────────────────────────────────────────────────────
+\multicolumn{3}{@{}l}{\textit{Symmetries}} \\
+$B_n$
+    & Hyperoctahedral group: signed permutations of the $n$ coordinate axes; acts on $\Lambda_n$.
+    & \S\ref{subsec:autom_generators} \\
+$\mathfrak{a}_n$
+    & The per-site automorphism algebra of $\Lambda_n$; provisional notation. At $n = 3$, $\dim \mathfrak{a}_3 = 71$ (catalogued in \texttt{dcl-zoo}).
+    & \S\ref{sec:automorphism_algebra} \\
+
+% ── Discrete differential geometry ─────────────────────────────────
+\multicolumn{3}{@{}l}{\textit{Discrete differential geometry}} \\
+$\Omega^k(\Lambda_n)$
+    & Discrete $k$-forms on $\Lambda_n$: functions on oriented $k$-cells.
+    & \S\ref{subsec:dec_forms} \\
+$d$
+    & Discrete exterior derivative $\Omega^k \to \Omega^{k+1}$.  Satisfies $d \circ d = 0$.
+    & \S\ref{subsec:dec_d} \\
+$d^\ast$
+    & Discrete codifferential: formal adjoint of $d$ with respect to the inner product on forms.
+    & \S\ref{subsec:dec_codifferential} \\
+$\langle \cdot, \cdot \rangle$
+    & Inner product on $\Omega^k(\Lambda_n)$ defined via the discrete measure.
+    & \S\ref{subsec:dec_codifferential} \\
+$\Delta = -d^\ast d - d d^\ast$
+    & Discrete Hodge Laplacian on $\Omega^k(\Lambda_n)$.  Converges to the continuum Laplacian in the $\epsilon \to 0$ limit.
+    & \S\ref{subsec:consistency_conditions} \\
+
+% ── Function spaces ────────────────────────────────────────────────
+\multicolumn{3}{@{}l}{\textit{Function spaces}} \\
+$\ell^p(\Lambda_n)$
+    & Discrete Lebesgue space, $1 \leq p \leq \infty$.
+    & \S\ref{subsec:lp_spaces} \\
+$\ell^{k,p}(\Lambda_n)$
+    & Discrete Sobolev-analogue space: lattice functions with discrete derivatives (via $d$) up to order $k$ in $\ell^p$.
+    & \S\ref{subsec:sobolev_analogue} \\
+$\|f\|_{p, \epsilon}$
+    & $\epsilon$-rescaled $\ell^p$-norm: $\|f\|_{p, \epsilon}^p = \epsilon^n \sum_{x} |f(x)|^p$.  Converges to $\|f\|_{L^p(\mathbb{R}^n)}$ in the $\epsilon \to 0$ limit.
+    & \S\ref{subsec:embeddings} \\
+$L^p(\mathbb{R}^n)$, $W^{k,p}(\mathbb{R}^n)$
+    & Continuum Lebesgue and Sobolev spaces; targets of the discrete-to-continuum limit.
+    & \S\ref{subsec:function_space_convergence} \\
+
+% ── Measure theory ─────────────────────────────────────────────────
+\multicolumn{3}{@{}l}{\textit{Measure theory}} \\
+$\mu_\#$
+    & Counting measure on $\Lambda_n$: $\mu_\#(A) = |A|$ for finite $A \subset \Lambda_n$.
+    & \S\ref{subsec:counting_measure} \\
+$\mu_{\#, \epsilon}$
+    & $\epsilon$-rescaled counting measure on $\epsilon \Lambda_n$: $\mu_{\#, \epsilon} = \epsilon^n \mu_\#$.  Converges to Lebesgue measure on $\mathbb{R}^n$ in the limit.
+    & \S\ref{subsec:counting_measure} \\
+
+% ── Kinetic theory (motivating examples) ───────────────────────────
+\multicolumn{3}{@{}l}{\textit{Kinetic theory (motivating examples, Section~\ref{sec:motivating_examples})}} \\
+$V$
+    & Discrete velocity space attached to each lattice site.  Provisionally, the neighbour-vector set of $\Lambda_n$.
+    & \S\ref{subsec:boltzmann} \\
+$f(x, v, t)$
+    & Lattice kinetic distribution function: density of particles at $x \in \Lambda_n$ with velocity $v \in V$ at time $t$.
+    & \S\ref{subsec:boltzmann} \\
+$f_{\text{eq}}$
+    & Local equilibrium (Maxwellian-analogue) distribution; parametrised by the conserved moments.
+    & \S\ref{subsec:boltzmann} \\
+$Q[f]$
+    & Boltzmann-shaped collision operator on the lattice.
+    & \S\ref{subsec:boltzmann} \\
+$H[f]$
+    & Lattice $H$-functional: $H[f] = \sum_{x, v} f(x, v) \log f(x, v)$.  Conjectured non-increasing under the lattice kinetic dynamics.
+    & \S\ref{subsec:boltzmann} \\
+$\rho$, $u$, $e$
+    & Fluid density, velocity, energy (the conserved moments of $f$); arguments of $f_{\text{eq}}$.
+    & \S\ref{subsec:fluid_limit} \\
+
+\hline
+\end{longtable}
+}

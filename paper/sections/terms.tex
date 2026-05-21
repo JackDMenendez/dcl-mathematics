@@ -1,0 +1,213 @@
+% terms.tex
+% Appendix -- Terms and meanings.  Glossary of technical / framework
+% terminology used in this paper.  Alphabetical within categories;
+% categories appear in a fixed order (framework -> mathematics ->
+% kinetic theory).  Cross-references to upstream papers and external
+% references are kept short; the bibliography carries the full cites.
+
+\label{sec:terms}
+
+\placeholder{Update entries whenever a term enters or shifts its
+standing meaning in the body of the paper.  Definitions below match
+the working notes in \texttt{notes/} -- when the two diverge, the
+notes are the working source and this appendix gets the synchronised
+phrasing at edit time.}
+
+\subsection*{Framework terms}
+
+\begin{description}
+\item[A=1 (Discrete Causal Lattice)] The A=1 DCL is the framework
+   established in Paper~I (\emph{Geometry First}).  Physics emerges
+   from three axioms applied to a bipartite octahedral lattice:
+   \emph{Unity} (amplitude is conserved at every tick, hence A=1),
+   \emph{Locality} (information propagates only between adjacent
+   nodes), and \emph{Phase} ($U(1)$ on a per-particle internal
+   clock).  See Paper~I for the full statement.
+
+\item[Audit table] A table mapping the paper's claims to the
+   evidence backing each one.  Each row has a status in
+   $\{\texttt{PASS}, \texttt{PART}, \texttt{STUB}, \texttt{FAIL}\}$.
+   The table is canonical: prose elsewhere in the paper does not
+   contradict it.  In this paper, the audit table appears in
+   \S\ref{sec:introduction}, Table~\ref{tab:audit}.
+
+\item[Bipartite octahedral lattice] The lattice $\Lambda_n$ defined
+   combinatorially in \S\ref{sec:lattice_n_dim}.  In dimension
+   $n = 3$, recovers Paper~I's substrate lattice.  Bipartite: vertex
+   set splits into two colour classes $V_n^{+}, V_n^{-}$.  Octahedral:
+   the neighbour structure at each site is the octahedral
+   coordination figure (or its $n$-D generalisation).
+
+\item[\texttt{dcl-formalism} (package)] Planned sympy-extending
+   package operationalising selected theorems of this paper as
+   machine-checked primitives.  Distinct from this repository:
+   \texttt{dcl-mathematics} proves the theorems; \texttt{dcl-formalism}
+   implements them.
+
+\item[\texttt{dcl-zoo} (generator zoo)] Catalogue repository
+   enumerating the 71-dimensional per-site automorphism algebra at
+   $n = 3$.  See \S\ref{subsec:autom_specialisation}.
+
+\item[Hilbert's Sixth Problem] Problem 6 from Hilbert's 1900 list:
+   \emph{``treat in the same manner, by means of axioms, those
+   physical sciences in which already today mathematics plays an
+   important part.''}  Singled out Boltzmann's kinetic theory and
+   the rigorous derivation of fluid equations as the centerpiece.
+   The planned series capstone (\texttt{dcl-paper-XX-hilbert-sixth},
+   Paper~I follow-on \#18) consumes this paper's
+   discrete-to-continuum limit machinery
+   (\S\ref{sec:continuum_limits}) for its axiomatisation claim.
+
+\item[Hilbert-Sixth on-ramp] Informal label for
+   \S\ref{sec:continuum_limits} of this paper: the
+   discrete-to-continuum limit machinery whose rigorous statement
+   the Hilbert-Sixth capstone synthesises into the axiomatisation
+   claim.
+
+\item[Joint-tick rule] Paper~I's rule for advancing the bipartite
+   lattice's two colour classes in synchrony at every tick.  Used
+   in \S\ref{subsec:lattice_specialisation} to specialise to $n=3$.
+
+\item[Motivating example] In this paper's usage, a section whose
+   content states a claim or research direction without proving it.
+   Section~\ref{sec:motivating_examples} (Boltzmann + fluid limit)
+   consists of motivating examples.  Audit-table rows for motivating
+   examples are by design \texttt{STUB} and stay \texttt{STUB} until
+   a subsequent paper closes them.
+
+\item[Paper~I, Paper~II, Paper~III] The first three papers in the
+   A=1 DCL series.  Paper~I (\emph{Geometry First},
+   doi:10.5281/zenodo.20078529): substrate priority; the bipartite
+   octahedral lattice carries Lorentz structure.  Paper~II
+   (\emph{Geometry Forces Physics}): the Standard-Model gauge group
+   is derived from a single conservation axiom on the lattice.
+   Paper~III (\emph{Tidal Ionization and the Quantum Roche Limit}):
+   gradient-detuning ionization channel; quantum Roche limit;
+   atomic ISCO.
+\end{description}
+
+\subsection*{Mathematical terms}
+
+\begin{description}
+\item[Automorphism algebra (per-site)] The Lie algebra of
+   infinitesimal automorphisms of $\Lambda_n$ that fix a chosen
+   site and preserve the bipartite structure plus the joint-tick
+   rule (Paper~I).  At $n = 3$, $71$-dimensional (catalogued in
+   \texttt{dcl-zoo}).  Generalisation to arbitrary $n$ is the
+   subject of \S\ref{sec:automorphism_algebra}.
+
+\item[Counting measure] The basic measure $\mu_\#$ on $\Lambda_n$
+   assigning $|A|$ to a finite subset $A$.  See
+   \S\ref{subsec:counting_measure}.
+
+\item[Discrete codifferential] Formal adjoint $d^\ast$ of the
+   discrete exterior derivative $d$, with respect to the inner
+   product on $\Omega^k$.  See \S\ref{subsec:dec_codifferential}.
+
+\item[Discrete connection] A choice of edge-valued data (a discrete
+   1-form, in the abelian case) used to define parallel transport
+   along lattice paths.  See \S\ref{subsec:dec_connections}.  Used
+   in Paper~II's gauge-derivation programme.
+
+\item[Discrete curvature] The 2-form on plaquettes that measures
+   the failure of plaquette holonomy to be the identity.  See
+   \S\ref{subsec:dec_connections}.
+
+\item[Discrete exterior calculus] The discrete analogue of the
+   exterior-calculus apparatus (forms, $d$, $d^\ast$, Stokes,
+   Hodge) developed on the lattice cell complex.  See
+   \S\ref{sec:discrete_diff_geometry}.
+
+\item[Discrete exterior derivative] The operator $d \colon \Omega^k
+   \to \Omega^{k+1}$ defined as a signed boundary sum.  Satisfies
+   $d \circ d = 0$.  See \S\ref{subsec:dec_d}.
+
+\item[Discrete-to-continuum limit] The limit $\epsilon \to 0$ of
+   the rescaled lattice $\epsilon \Lambda_n$ towards
+   $\mathbb{R}^n$, together with the limits of operators / function
+   spaces / measures defined on the rescaled lattice.  See
+   \S\ref{sec:continuum_limits}.
+
+\item[Discrete $k$-form] A function on oriented $k$-cells of
+   $\Lambda_n$.  See \S\ref{subsec:dec_forms}.
+
+\item[Haar-analogue measure] On $\Lambda_n$, a measure invariant
+   under the per-site automorphism algebra.  By
+   uniqueness arguments analogous to Haar's theorem on locally
+   compact groups, often coincides with the counting measure up to
+   scaling.  See \S\ref{subsec:haar_analogue}.
+
+\item[Holonomy (lattice / plaquette)] The product of discrete
+   connection 1-forms along a closed lattice path.  Plaquette
+   holonomy is the holonomy around an elementary plaquette; its
+   failure to be the identity defines the discrete curvature.
+   See \S\ref{subsec:dec_connections}.
+
+\item[Hyperoctahedral group] $B_n$: the group of signed permutations
+   of the $n$ coordinate axes.  Wreath product $\mathbb{Z}/2 \wr
+   S_n$; order $2^n \, n!$.  Acts on $\Lambda_n$ preserving the
+   bipartite structure.  See \S\ref{subsec:autom_generators}.
+
+\item[Lattice spacing] The parameter $\epsilon$ used to rescale
+   $\Lambda_n \subset \mathbb{Z}^n$ to $\epsilon \Lambda_n \subset
+   \mathbb{R}^n$.  $\epsilon \to 0$ gives the discrete-to-continuum
+   limit.  See \S\ref{subsec:limit_parameter}.
+
+\item[Sobolev-analogue space] $\ell^{k,p}(\Lambda_n)$: discrete
+   functions with discrete derivatives (via $d$) up to order $k$ in
+   $\ell^p$.  Discrete analogue of $W^{k,p}(\mathbb{R}^n)$.  See
+   \S\ref{subsec:sobolev_analogue}.
+\end{description}
+
+\subsection*{Kinetic-theory terms (motivating examples)}
+
+\begin{description}
+\item[Chapman-Enskog expansion] An asymptotic expansion of the
+   kinetic distribution function $f$ in powers of the small
+   parameter $\epsilon$, used (in the continuum case) to derive
+   fluid equations from the Boltzmann equation.  See
+   \S\ref{subsec:fluid_limit}.
+
+\item[Collision invariant] A function $\phi(v)$ in the kernel of
+   the (linearised) collision operator $Q$; physically: a quantity
+   conserved in collisions (mass, momentum, energy).  Determines the
+   conserved moments $\rho$, $u$, $e$ in the fluid limit.
+
+\item[Collision operator] The operator $Q[f]$ on a kinetic
+   distribution function $f$ encoding particle-collision dynamics.
+   See \S\ref{subsec:boltzmann}.
+
+\item[Equilibrium measure] A zero of the collision operator $Q$;
+   parametrised by conserved moments $(\rho, u, e)$.  Maxwellian in
+   the continuum case; Maxwellian-analogue on the lattice.  See
+   \S\ref{subsec:boltzmann}.
+
+\item[Fluid limit] The limit in which a kinetic equation
+   (Boltzmann) gives way to a fluid equation (Navier-Stokes or
+   Euler) under an appropriate scaling.  In this paper, framed as
+   a motivating example in \S\ref{subsec:fluid_limit}.
+
+\item[$H$-functional] The convex functional $H[f] = \sum f \log f$
+   on kinetic distribution functions.  Boltzmann's $H$-theorem is
+   the statement that $H$ is non-increasing under the kinetic
+   dynamics.  See \S\ref{subsec:boltzmann}.
+
+\item[$H$-theorem] Boltzmann's theorem (in the continuum) that
+   $H[f]$ is non-increasing under the kinetic dynamics; equivalent
+   to the second law of thermodynamics for the kinetic system.
+   The lattice analogue is conjectured in \S\ref{subsec:boltzmann}
+   and proof is deferred to a subsequent paper.
+
+\item[Lattice-Boltzmann (kinetic theory)] The Boltzmann-shaped
+   kinetic equation on $\Lambda_n$.  Note: distinct from the
+   numerical-PDE method of the same name; here the discrete velocity
+   set is a physical / framework structure, not a numerical
+   discretisation.  See \S\ref{subsec:boltzmann}.
+
+\item[Navier-Stokes equations] The continuum fluid equations
+   $\partial_t \rho + \nabla \cdot (\rho u) = 0$, $\partial_t (\rho
+   u) + \nabla \cdot (\rho u \otimes u + p \mathbb{I}) = \nabla
+   \cdot \tau$, $\partial_t (\rho e) + \ldots$, with viscous stress
+   tensor $\tau$.  Target of the fluid-limit ansatz in
+   \S\ref{subsec:fluid_limit}.
+\end{description}
