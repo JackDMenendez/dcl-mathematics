@@ -260,6 +260,13 @@ internal-reference tag.
   Boltzmann-shaped collision operators on the lattice.
 - `notes/fluid_limit_ansatz.md` -- motivating-example framing for
   the lattice-Boltzmann -> NS / Euler limit ansatz.
+- `notes/coherence_history_invariant.md` -- exploratory research
+  thread (2026-05-21): "nothing" in the A=1 sense as
+  *never-cohered* (stricter than the DCQ-FBT paper's
+  *currently-lacking-coherence*); decoherence creates a permanent
+  record by A=1 accounting; at least some of Paper II's 51 unused
+  generators conjectured to be the record-keepers; some virtual
+  particles may be residual records.
 
 External pointer: `c:/dev/physics-research/notes/raw_thoughts.md`
 2026-05-21 entries are the upstream source for the v0.2
