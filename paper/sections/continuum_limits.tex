@@ -1,50 +1,51 @@
 % continuum_limits.tex
-% Section 7 -- discrete-to-continuum limit operators.  The Hilbert-Sixth
+% Section 8 -- discrete-to-continuum limit operators.  The Hilbert-Sixth
 % on-ramp.  Lattice-spacing parameter epsilon, epsilon -> 0 limit,
-% convergence modes (weak / strong / distributional), consistency
-% conditions tying discrete to continuum operators.
+% convergence modes, consistency conditions tying discrete to
+% continuum operators.
 
 \label{sec:continuum_limits}
 
 \placeholder{Section body -- write during Phase 4.  This is the
 load-bearing section for the planned Hilbert-Sixth capstone.  Develop
 the discrete-to-continuum limit machinery: parameter, topology,
-convergence modes, consistency theorems.  The most mathematical care
-in the paper goes here.}
+convergence modes, consistency theorems.  The most mathematical
+care in the paper goes here.}
 
 \subsection{The Limit Parameter}
 \label{subsec:limit_parameter}
 
 \placeholder{Introduce the lattice-spacing parameter $\epsilon > 0$;
-the rescaled lattice $\epsilon \Lambda_n \subset \mathbb{R}^n$; the
+the rescaled lattice $\epsilon \Lambda_d \subset \mathbb{R}^d$; the
 $\epsilon \to 0$ limit as the discrete-to-continuum passage.}
 
 \subsection{Convergence Modes}
 \label{subsec:convergence_modes}
 
 \placeholder{Define what it means for a sequence of discrete
-operators $T_\epsilon \colon \ell^p(\epsilon \Lambda_n) \to
-\ell^p(\epsilon \Lambda_n)$ to converge to a continuum operator
-$T \colon L^p(\mathbb{R}^n) \to L^p(\mathbb{R}^n)$.  Three modes:
+operators $T_\epsilon \colon \ell^p(\epsilon \Lambda_d) \to
+\ell^p(\epsilon \Lambda_d)$ to converge to a continuum operator
+$T \colon L^p(\mathbb{R}^d) \to L^p(\mathbb{R}^d)$.  Three modes:
 strong, weak, and distributional.  Relations among them.}
 
 \subsection{Consistency Conditions}
 \label{subsec:consistency_conditions}
 
 \placeholder{Conditions tying discrete operators to their continuum
-limits.  The discrete exterior derivative
+limits.  The discrete exterior derivative $\mathrm{d}$
 (Section~\ref{sec:discrete_diff_geometry}) converges to the
-continuum $d$ in $L^p$ for appropriate function classes; the
-discrete Laplacian converges to the continuum Laplacian; \ldots.
-These are the consistency theorems the Hilbert-Sixth capstone
-will cite.}
+continuum $\mathrm{d}$ in $L^p$ for appropriate function classes;
+the discrete Hodge Laplacian $\Delta_{\Lambda_d}$ converges to the
+continuum Laplacian; \ldots.  These are the consistency theorems
+the Hilbert-Sixth capstone will cite.}
 
 \subsection{Function-Space Convergence}
 \label{subsec:function_space_convergence}
 
 \placeholder{Convergence of the function spaces themselves:
-$\ell^p(\epsilon \Lambda_n) \to L^p(\mathbb{R}^n)$ in an appropriate
-sense; Sobolev-embedding constants stabilising in the limit.}
+$\ell^p(\epsilon \Lambda_d) \to L^p(\mathbb{R}^d)$ in an
+appropriate sense; Sobolev-embedding constants stabilising in the
+limit.}
 
 \subsection{Why This is the Hilbert-Sixth On-Ramp}
 \label{subsec:hilbert_sixth_onramp}
@@ -56,5 +57,6 @@ require a discrete-to-continuum limit treated with full rigour.
 This section provides the apparatus the capstone synthesises into
 the axiomatisation claim.  Cross-reference: the motivating examples
 in Section~\ref{sec:motivating_examples} show what the apparatus is
-used \emph{for}; the proofs of those examples are deferred to
-subsequent papers.}
+used \emph{for}; the dimensional-selection corollary in
+Section~\ref{sec:dimensional_selection} is the other principal
+consumer.}

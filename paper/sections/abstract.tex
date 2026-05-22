@@ -1,42 +1,71 @@
 % abstract.tex
-\placeholder{Abstract -- rewrite in finished prose once Phase 2 sections land.}
+\placeholder{Rewrite in finished prose once Phase~2 (theorem proofs)
+lands.  v0.2 outline: states the diamond-progression construction, the
+three result-density theorems, the dimensional-selection corollary,
+and the deferred-to-motivating-examples scope of Boltzmann + NS.}
 
 \noindent
-The A=1 Discrete Causal Lattice (DCL) framework establishes the
-bipartite octahedral lattice as the substrate of fundamental physics
-in (3+1) dimensions (\emph{Geometry First}, Paper~I).  Downstream
-work in the DCL series -- the gauge-derivation programme of Paper~II,
-the discrete-probability paper closing the gauge-coupling prefactor,
-the planned Hilbert-Sixth axiomatisation capstone, and future
-kinetic-theory work in the spirit of the Boltzmann / Navier-Stokes
-limit -- consumes \emph{more} of the underlying mathematics than
-Paper~I exposed, and uses it in arbitrary dimension rather than only
-in the (3+1)-D physical setting.  This paper collects the
-foundational mathematics those downstream subprojects share, in a
-single citable source.
+Paper~I of the A=1 Discrete Causal Lattice (DCL) series established
+the bipartite octahedral lattice as the substrate of fundamental
+physics in (3+1) dimensions.  This paper -- the foundational
+mathematics companion -- generalises that lattice to all dimensions
+$d \geq 2$ via a single construction (the \emph{diamond progression}:
+the d-of-(d+1) regular simplex vertex set), proves three result-
+density theorems characterising the resulting geometry, and derives a
+corollary that selects $d = 3$ as the framework's admissible
+dimension.
 
 \medskip
 
 \noindent
-We define the bipartite octahedral lattice in arbitrary dimension
-$n$, characterise its automorphism algebra as a function of $n$
-(extending the 3-D 71-dimensional per-site algebra catalogued in
-\texttt{dcl-zoo}), develop the discrete differential geometry,
-function-space theory, and discrete measure theory the lattice
-supports, and -- centrally -- formulate the discrete-to-continuum
-limit operators that the Hilbert-Sixth capstone consumes for its
-axiomatisation claim.  Two motivating examples appear in
-Section~\ref{sec:motivating_examples}: Boltzmann-shaped collision
-operators on the lattice, and the lattice-Boltzmann -> Navier-Stokes /
-Euler fluid-limit ansatz.  In this first paper these examples are
-framing only; full proofs are deferred to subsequent papers in this
-repository or in sibling repositories.
+The three theorems are
+\begin{itemize}
+\item $\text{coord}(d) = 2d$ (linear in dimension),
+\item maximum Euclidean hop = $\sqrt{d}$,
+\item unit-cell volume = $(d+1)^{(d-1)/2}$.
+\end{itemize}
+The linear-coordination result distinguishes the diamond progression
+from chemical-diamond / face-centred-cubic-style constructions where
+coordination stays bounded; the consequence is that
+propagation through the $d=3$ lattice is \emph{denser} (more hops
+per unit Euclidean distance) than through higher-$d$ instances.
+
+\medskip
+
+\noindent
+The headline corollary couples the diamond progression to a
+hypothetical minimum probability quantum $\delta p_\min$:
+
+\begin{equation*}
+d_{\max} = \frac{1}{\delta p_\min} - 1.
+\end{equation*}
+At $\delta p_\min = 1/4$, $d_{\max} = 3$ -- i.e.\ the lattice
+\emph{cannot} sustain the A=1 unity axiom in $d \geq 4$ because
+some node would have to carry less than $\delta p_\min$.  This is the
+candidate mechanism that \emph{forces} the universe to be three
+dimensional rather than permitting it.  The empirical investigation of
+$\delta p_\min$ -- including the question of whether the framework
+forces the natural value $1/4$ -- lives in the companion repository
+\texttt{dcl-delta-p-min}.
+
+\medskip
+
+\noindent
+The remainder of the paper develops the analytic foundations
+(discrete differential geometry, function spaces, discrete measure
+theory) on the diamond progression and constructs the discrete-to-
+continuum limit machinery (Section~\ref{sec:continuum_limits})
+that the planned Hilbert-Sixth capstone consumes.  Boltzmann-shaped
+operators and the lattice-Boltzmann $\to$ NS / Euler fluid limit
+appear as \emph{motivating examples}
+(Section~\ref{sec:motivating_examples}); their full proofs are
+deferred to subsequent papers.
 
 \medskip
 
 \noindent
 The paper's status across its claims is tracked in
-Section~\ref{sec:introduction}, Table~\ref{tab:audit}.  At v0.1-DRAFT,
-all toolkit-internal rows are \texttt{STUB}; the artefact at this
-version is a paper-shaped outline that locks the conventions and
-the sectioning, not a finished body of proofs.
+Section~\ref{sec:introduction}, Table~\ref{tab:audit}.  At
+v0.2-DRAFT, the inherited Paper~I guardrail rows are \texttt{PASS};
+the three result-density theorems and the dimensional-selection
+corollary are \texttt{STUB} pending Phase~2 proofs.

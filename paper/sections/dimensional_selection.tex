@@ -1,0 +1,157 @@
+% dimensional_selection.tex
+% Section 9 (NEW in v0.2) -- the headline corollary: a minimum
+% probability quantum δp_min forces d_max = 1/δp_min - 1.  At δp_min
+% = 1/4, d_max = 3.  This is the candidate mechanism that selects
+% the universe's dimension rather than permitting it.
+
+\label{sec:dimensional_selection}
+
+\placeholder{Section body -- write during Phase~2.  State and prove
+the dimensional-selection corollary; spell out the
+$\delta p_\min = 1/4 \Rightarrow d_\max = 3$ specialisation; document
+the cross-reference to \texttt{dcl-delta-p-min} for the empirical
+investigation of $\delta p_\min$'s value.}
+
+\subsection{Setup: A Minimum Probability Quantum}
+\label{subsec:dp_min_setup}
+
+\placeholder{Take $\delta p_\min > 0$ as a hypothesis: the A=1
+framework admits no probability per site smaller than $\delta p_\min$.
+The hypothesis can be realised in (at least) two operationally
+distinct ways:
+
+\begin{itemize}
+\item A \emph{clamp} on continuous amplitudes: $|psi(x)|^2 \geq
+   \delta p_\min$ when non-zero.  Implementation: the
+   \texttt{prob\_floor} parameter on \texttt{dcl\_core.core}
+   (planned \texttt{dcl-core v0.2.0}).
+\item An \emph{intrinsic granularity}: probability is represented as
+   a multiple of $\delta p_\min$.  Implementation: the integer-token
+   engine \texttt{dcl\_core.core3d} with token budget
+   $N = 1/\delta p_\min$.
+\end{itemize}
+
+The cross-engine equivalence question -- whether these two
+realisations produce the same physics -- is the open question of
+Phase~1 in \texttt{dcl-delta-p-min}.  This section's result is
+operationally engine-agnostic: it depends only on the *existence* of
+a $\delta p_\min > 0$, not on its realisation.}
+
+\subsection{The Dimensional-Selection Corollary}
+\label{subsec:dp_min_dmax_corollary}
+
+\begin{theorem}[Dimensional selection from $\delta p_\min$]
+\label{thm:dp_min_dmax}
+If a minimum probability quantum $\delta p_\min > 0$ exists in the
+A=1 framework, then the diamond progression $\Lambda_d$ can sustain
+the $\mathcal{A} = 1$ unity axiom only for
+\begin{equation*}
+d \leq d_{\max} = \frac{1}{\delta p_\min} - 1.
+\end{equation*}
+\end{theorem}
+
+\begin{proof}
+\placeholder{Proof: at any site $x$ of $\Lambda_d$, the unity
+constraint $\mathcal{A} = 1$ requires the per-site probability mass
+to distribute over $x$ together with all the configurations
+participating in the joint-tick rule.  By
+Theorem~\ref{thm:coord_2d}, the site has $2d$ neighbours; combined
+with the joint-tick-rule's structure, $d + 1$ distinct probability
+slots receive non-zero mass.  Each slot must carry probability at
+least $\delta p_\min$, so
+$(d+1) \cdot \delta p_\min \leq 1$, giving
+$d \leq 1/\delta p_\min - 1$.  Spell out the joint-tick-rule
+participation count once the construction is fixed in
+Section~\ref{sec:lattice_n_dim}.}
+\end{proof}
+
+\paragraph{Note on the proof structure.}
+\todomark{motivating-example: the exact slot-count ``$d+1$'' depends
+on a specific reading of the joint-tick rule that pulls from Paper~I
+plus the diamond-progression structure of
+Section~\ref{sec:lattice_n_dim}.  Phase~2 work must verify that
+this count is precise rather than a sketch; alternative readings
+(e.g.\ $2d+1$ slots) give different $d_\max$ formulae.  The
+formula $d_\max = 1/\delta p_\min - 1$ is the user's stated result
+from `raw\_thoughts.md` 2026-05-21 \texttt{[result-2]}; this paper
+re-derives and confirms it.}
+
+\subsection{Specialisation: $\delta p_\min = 1/4 \Rightarrow d_{\max} = 3$}
+\label{subsec:dp_min_dmax_3}
+
+\begin{corollary}
+\label{cor:dmax_3}
+If $\delta p_\min = 1/4$, then $d_{\max} = 3$.
+\end{corollary}
+
+\begin{proof}
+Direct substitution into Theorem~\ref{thm:dp_min_dmax}:
+$d_{\max} = 1/(1/4) - 1 = 4 - 1 = 3$.
+\end{proof}
+
+\paragraph{Significance.}
+This corollary is the candidate mechanism that \emph{forces} the
+universe to be three-dimensional rather than permitting it.  If the
+A=1 framework forces $\delta p_\min = 1/4$ (via a token-conservation
+constraint or analogous structural argument), then it forces $d =
+3$.  The framework is no longer compatible with our observed
+universe by accident -- it is compatible because the unique
+admissible $d$ is $3$.
+
+\paragraph{Connection to Paper~I.}
+Paper~I established the bipartite octahedral lattice as the
+substrate of physics in $(3+1)$ dimensions.  At the time of
+Paper~I, the specific choice of $d = 3$ was \emph{motivated} by
+observation -- physics is 3D, so the lattice is 3D.  This
+corollary inverts the relationship: given $\delta p_\min$, the
+framework forces $d = 3$.  Observational compatibility becomes
+a structural consequence rather than a motivating constraint.
+
+\subsection{The Empirical Question: Is $\delta p_\min = 1/4$?}
+\label{subsec:dp_min_value_question}
+
+\placeholder{The corollary above is mathematical: it derives
+$d_\max$ from $\delta p_\min$ given the diamond progression's
+structure.  Whether the framework forces $\delta p_\min$ to take a
+specific value (and which value) is a separate question -- empirical
+and / or structural-from-token-conservation.
+
+The companion repository \texttt{dcl-delta-p-min} runs the
+investigation.  Briefly: a 4-cell numerical grid (two engines
+crossed with two $\delta p_\min$ regimes) measures how the
+Arnold-tongue width and hydrogen Bohr-radius recovery depend on
+$\delta p_\min$; the largest $\delta p_\min$ at which Paper~I's
+PASS audit rows remain recoverable is a framework-internal upper
+bound.  The planned discrete-probability paper plausibly pins
+$\delta p_\min$'s natural value via a token-conservation argument
+(Outcome~D of \texttt{dcl-delta-p-min}'s Phase~4 stance decision).
+At $\delta p_\min = 1/4$, Corollary~\ref{cor:dmax_3} forces $d_\max
+= 3$ exactly; at other values, the dimensional ceiling shifts.
+
+For this paper, the result stands as a \emph{conditional theorem}:
+if $\delta p_\min$ exists and equals $1/4$, then $d_\max = 3$.
+The conditional is non-empty -- the diamond progression admits
+$\delta p_\min$ structurally, and the value $1/4$ is the empirical
+target of \texttt{dcl-delta-p-min}.}
+
+\subsection{Implications}
+\label{subsec:dimensional_selection_implications}
+
+\begin{itemize}
+\item \emph{The Hilbert-Sixth capstone}
+      (\texttt{dcl-paper-XX-hilbert-sixth}, planned) consumes this
+      corollary as part of its universality argument: the
+      axiomatisation forces $d = 3$.
+\item \emph{The planned discrete-probability paper} fixes
+      $\delta p_\min$'s value (Outcome~D of the
+      \texttt{dcl-delta-p-min} investigation); this paper's
+      corollary then becomes a parameter-free statement.
+\item \emph{The aspirational F4 sequel} (`A=1 forces linear
+      coordination', tracked in
+      \texttt{physics-research/notes/raw\_thoughts.md}) asks
+      whether the diamond progression is the \emph{only} bipartite
+      lattice family admitting A=1 non-degenerately.  If F4 lands,
+      Corollary~\ref{cor:dmax_3} sharpens further: not just
+      ``$d_\max = 3$ for the diamond progression'' but ``$d_\max
+      = 3$ for any lattice family admitting A=1''.
+\end{itemize}

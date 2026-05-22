@@ -1,0 +1,126 @@
+% three_theorems.tex
+% Section 3 -- the three result-density theorems of the diamond
+% progression.  This is the structural spine of the paper.  All STUB
+% at v0.2; Phase 2 proves them.
+
+\label{sec:three_theorems}
+
+\placeholder{Section body -- write during Phase~2.  State and prove
+the three theorems that characterise the geometry of the diamond
+progression as a function of $d$.  Each theorem stands as its own
+result; together they distinguish the diamond progression from
+nearby constructions.}
+
+\subsection{Theorem 1: Linear Coordination}
+\label{subsec:theorem_1}
+
+\begin{theorem}[Linear coordination]
+\label{thm:coord_2d}
+For every $d \geq 2$, every vertex of $\Lambda_d$ has exactly $2d$
+neighbours:
+\begin{equation*}
+\text{coord}(d) = 2d.
+\end{equation*}
+\end{theorem}
+
+\begin{proof}
+\placeholder{Proof: count the d-of-(d+1) simplex vertex offsets and
+their negations.  Each of the $d$ offsets contributes one positive
+and one negative edge from any site; total $2d$.  Spell this out
+in coordinates once the offset set is fixed.}
+\end{proof}
+
+\paragraph{Significance.}
+This is the most consequential of the three theorems.  Chemical-
+diamond and face-centred-cubic-style constructions have coordination
+that stays bounded (typically~$4$ or~$12$) as $d$ grows; the diamond
+progression's linear coordination is the structural feature that
+distinguishes it from those constructions and that underwrites the
+dimensional-selection corollary in
+Section~\ref{sec:dimensional_selection}.
+
+\subsection{Theorem 2: Maximum Euclidean Hop}
+\label{subsec:theorem_2}
+
+\begin{theorem}[Maximum hop length]
+\label{thm:max_hop}
+For every $d \geq 2$, the longest single edge (in Euclidean distance,
+under the standard projection of the regular $(d+1)$-simplex into
+$\mathbb{R}^d$) has length $\sqrt{d}$.
+\end{theorem}
+
+\begin{proof}
+\placeholder{Proof: the longest edge corresponds to the simplex
+vertex furthest from a chosen base vertex.  Compute the Euclidean
+distance in the standard projection; it works out to $\sqrt{d}$.
+Spell out the projection conventions and the explicit distance
+computation.}
+\end{proof}
+
+\paragraph{Significance.}
+Combined with Theorem~1, this implies that as $d$ grows the lattice
+becomes \emph{denser in hops per unit Euclidean distance} -- there
+are $2d$ edges per vertex but only one of length $\sqrt{d}$; the rest
+are shorter.  Propagation through the $d = 3$ lattice is therefore
+slower (more hops per unit physical distance) than through higher-$d$
+instances.  This observation is the seed of the \emph{essay}
+companion ``the progression is fractal'' tracked in `raw_thoughts.md`.
+
+\subsection{Theorem 3: Unit-Cell Volume}
+\label{subsec:theorem_3}
+
+\begin{theorem}[Unit-cell volume]
+\label{thm:unit_cell_volume}
+For every $d \geq 2$, the volume of the unit cell of $\Lambda_d$ is
+\begin{equation*}
+\text{vol}(d) = (d+1)^{(d-1)/2}.
+\end{equation*}
+\end{theorem}
+
+\begin{proof}
+\placeholder{Proof: standard simplex-volume formula applied to the
+$(d+1)$-vertex projection in $\mathbb{R}^d$.  $(d+1)^{(d-1)/2}$
+follows from the determinant of the offset matrix.  Spell out the
+matrix and the determinant computation.}
+\end{proof}
+
+\paragraph{Significance.}
+Unit-cell volume grows super-exponentially in $d$ -- $\text{vol}(3)
+= 4 \cdot \sqrt{2} \approx 5.66$, $\text{vol}(4) = 25$,
+$\text{vol}(5) = 6^2 \sqrt{6} \approx 88$.  Combined with Theorems~1
+and~2, this gives the density / scaling profile that the discrete-to-
+continuum limit machinery (Section~\ref{sec:continuum_limits})
+must respect.
+
+\subsection{Why These Three}
+\label{subsec:why_three_theorems}
+
+\placeholder{The three theorems characterise the diamond progression
+at three distinct geometric levels: combinatorial
+(Theorem~\ref{thm:coord_2d}), Euclidean
+(Theorem~\ref{thm:max_hop}), and volumetric
+(Theorem~\ref{thm:unit_cell_volume}).  A fourth theorem of the same
+calibre would be one of: the explicit shape of the unit cell beyond
+volume (boundary structure); the second-eigenvalue / spectral gap
+of the adjacency operator; the diameter / girth of $\Lambda_d$
+restricted to a finite torus.  Any of these can be added in a
+follow-on paper without disturbing the three-theorem spine of this
+one.}
+
+\subsection{Implications for the Rest of the Paper}
+\label{subsec:three_theorem_implications}
+
+\begin{itemize}
+\item Theorem~\ref{thm:coord_2d} ($\text{coord} = 2d$) is the
+      key input to the dimensional-selection corollary
+      (Section~\ref{sec:dimensional_selection}).
+\item Theorem~\ref{thm:max_hop} (max hop $= \sqrt{d}$) sets the
+      scale parameter for the rescaled lattice $\epsilon \Lambda_d$
+      in the discrete-to-continuum limit
+      (Section~\ref{sec:continuum_limits}).
+\item Theorem~\ref{thm:unit_cell_volume} (vol $= (d+1)^{(d-1)/2}$)
+      enters the function-space scaling laws
+      (Section~\ref{sec:function_spaces}) and the discrete-measure
+      definitions
+      (Section~\ref{sec:discrete_measure_theory}).
+\end{itemize}

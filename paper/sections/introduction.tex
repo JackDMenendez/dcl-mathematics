@@ -1,71 +1,92 @@
 % introduction.tex
-% Foundations-toolkit introduction.  Replaces the template's exemplar
-% introduction (which demonstrated cross-reference / figure-include
-% patterns).  Reference patterns kept; exemplar prose removed.
+% Foundations-of-Paper-IV introduction (v0.2 recalibration).  Foregrounds
+% the diamond-progression construction, the three result-density theorems,
+% and the dimensional-selection corollary as the paper's spine.
 
 \label{sec:introduction}
 
-\placeholder{Rewrite once Phase 2 sections land.  This stub fills the
-role of an introduction at v0.1: states the problem, the contribution,
-and the scope, and surfaces the audit table.}
+\placeholder{Rewrite in finished prose once Phase~2 sections land.
+At v0.2 the introduction states the problem (extending Paper~I's
+bipartite lattice to all $d$), the construction (diamond progression),
+the three theorems, and the dimensional-selection corollary that
+makes the paper structurally complete.}
 
 \subsection{Problem}
 \label{subsec:problem}
 
-The A=1 Discrete Causal Lattice (DCL) programme establishes a
-bipartite octahedral lattice in (3+1) dimensions as the substrate of
-fundamental physics~\cite{example2024}.\footnote{Citations through
-this draft refer to placeholder BibTeX entries in
-\texttt{paper-bib/references.bib}; real cites land as the prose is
-written.}  Paper~I sets out the substrate-priority claim in 3-D
-because physics is 3-D.  The mathematics underlying the lattice,
-however, is naturally $n$-dimensional, and the series' downstream
-work consumes it at that level of generality:
+Paper~I~\cite{example2024} established that the bipartite octahedral
+lattice carries the (3+1)-D Lorentz structure of fundamental
+physics.\footnote{Citations through this draft refer to placeholder
+BibTeX entries in \texttt{paper-bib/references.bib}; real cites land
+as the prose is written.}  The construction in Paper~I is specific
+to $d = 3$ -- the physical setting -- but the mathematics is
+naturally dimension-agnostic.  Downstream work in the DCL series
+needs the lattice at arbitrary $d$:
 
 \begin{itemize}
 \item Paper~II's gauge-derivation programme uses lattice symmetries
-      in a way that does not depend on $n = 3$;
+      whose statements do not depend on $d = 3$;
 \item the planned Hilbert-Sixth axiomatisation capstone needs
-      $n$-dimensional theorems for its universality claim;
-\item future kinetic-theory work on the lattice -- the Boltzmann /
-      Navier-Stokes programme that Hilbert's 1900 problem singled
-      out -- needs discrete-to-continuum limit machinery whose
-      natural statement is dimension-agnostic.
+      $d$-dimensional theorems for its universality claim;
+\item future kinetic-theory work on the lattice (Boltzmann / Navier-
+      Stokes / Euler) needs discrete-to-continuum limit machinery
+      whose natural statement is dimension-agnostic.
 \end{itemize}
 
-\noindent
-The mathematics is currently scattered across Paper~I's sections,
-\texttt{notes/} files in upstream repositories, and the
-\texttt{dcl-zoo} catalogue of the 71-dimensional per-site automorphism
-algebra.  A single home prevents drift between papers and gives
-downstream papers a single citable source.
+But the more interesting question is not just \emph{can we extend the
+mathematics to all $d$?} (yes; the construction below works) but
+\emph{does the framework itself permit, prefer, or force a specific
+$d$?}  We answer the second question affirmatively: combined with a
+minimum probability quantum $\delta p_\min$, the framework forces
+$d \leq 1/\delta p_\min - 1$.
 
 \subsection{Contribution}
 \label{subsec:contribution}
 
-This paper develops the foundations of the A=1 DCL in arbitrary
-dimension $n$, organised as follows.
+Four contributions, in order:
+
+\paragraph{1.~The diamond progression.}
+Section~\ref{sec:lattice_n_dim} introduces a single combinatorial
+construction -- the d-of-(d+1) regular simplex vertex set -- that
+generates a bipartite octahedral lattice in every dimension
+$d \geq 2$.  The bipartition is strict, indexed by parity (even /
+odd integers).  At $d = 3$ the construction recovers Paper~I's
+substrate lattice exactly.  We call this family the \emph{diamond
+progression} -- a custom variant, distinct from chemical diamond.
+
+\paragraph{2.~Three result-density theorems.}
+Section~\ref{sec:three_theorems} proves three theorems
+characterising the geometry of the diamond progression as a
+function of $d$:
 
 \begin{itemize}
-\item \textbf{Combinatorial foundations} (Sections~\ref{sec:lattice_n_dim}
-      and~\ref{sec:automorphism_algebra}): the lattice itself in
-      dimension $n$, and its automorphism algebra as a function of
-      $n$ (recovering the 3-D 71-dimensional algebra at $n = 3$).
-\item \textbf{Analytic foundations} (Sections~\ref{sec:discrete_diff_geometry},
-      \ref{sec:function_spaces}, and~\ref{sec:discrete_measure_theory}):
-      discrete differential geometry, function spaces ($\ell^p$ /
-      Sobolev-analogues with $n$-dependent scaling), and discrete
-      measure theory.
-\item \textbf{The Hilbert-Sixth on-ramp} (Section~\ref{sec:continuum_limits}):
-      discrete-to-continuum limit operators -- the most load-bearing
-      content for the capstone, where the most mathematical care is
-      needed.
-\item \textbf{Motivating examples} (Section~\ref{sec:motivating_examples}):
-      Boltzmann-shaped collision operators on the lattice, and the
-      lattice-Boltzmann -> NS / Euler fluid-limit ansatz.  These
-      sections are framing only at v0.1; the full proofs are out of
-      scope for this first paper.
+\item $\text{coord}(d) = 2d$,
+\item maximum Euclidean hop = $\sqrt{d}$,
+\item unit-cell volume = $(d+1)^{(d-1)/2}$.
 \end{itemize}
+The first is the most consequential: it distinguishes the diamond
+progression from chemical-diamond-style constructions (which stay at
+coord~$4$ as $d$ grows) and underwrites the dimensional-selection
+corollary in Section~\ref{sec:dimensional_selection}.
+
+\paragraph{3.~The Hilbert-Sixth on-ramp.}
+Sections~\ref{sec:discrete_diff_geometry}--\ref{sec:continuum_limits}
+develop the analytic foundations on the diamond progression:
+discrete differential geometry, function spaces, discrete measure
+theory, and the discrete-to-continuum limit operators.  Section~\ref{sec:continuum_limits}
+is the load-bearing section the planned Hilbert-Sixth capstone
+consumes.
+
+\paragraph{4.~Dimensional selection.}
+Section~\ref{sec:dimensional_selection} couples the diamond
+progression to a hypothetical $\delta p_\min$ and derives
+$d_{\max} = 1/\delta p_\min - 1$.  At $\delta p_\min = 1/4$,
+$d_{\max} = 3$.  The result is a candidate mechanism that
+\emph{forces} the universe to be three dimensional.  The empirical
+investigation of $\delta p_\min$ (and the question of whether the
+framework forces the value $1/4$) lives in the companion repository
+\texttt{dcl-delta-p-min}; this paper provides the mathematical
+statement on the assumption that some $\delta p_\min > 0$ exists.
 
 \subsection{Scope}
 \label{subsec:scope}
@@ -73,28 +94,37 @@ dimension $n$, organised as follows.
 Out of scope for this first paper:
 
 \begin{itemize}
-\item \emph{Physics applications.}  The lattice's role as the
-      substrate of fundamental physics is the subject of Papers~I
-      and~II and of the discrete-probability paper, not of this
-      paper.
+\item \emph{Physics applications.}  The lattice's role as substrate
+      of fundamental physics is the subject of Papers~I, II, III and
+      the planned discrete-probability paper.
 \item \emph{Sympy operationalisation.}  Machine-checked versions of
-      this paper's theorems will live in the planned
-      \texttt{dcl-formalism} package, not here.  This repository is
-      paper-only.
-\item \emph{Boltzmann / NS proof.}  The lattice kinetic theory and
-      the fluid limit appear here as motivating examples
-      (Section~\ref{sec:motivating_examples}).  Full proofs of the
-      $H$-theorem on the lattice and of the fluid-limit convergence
-      are deferred to subsequent papers.
-\item \emph{Numerical experiments.}  No code accompanies this
-      paper; numerical confirmation of any of its theorems happens
-      either in \texttt{dcl-core}-based experiments in sibling repos
-      or in the \texttt{dcl-formalism} package's automated
-      sympy-verifications.
+      the three theorems and the dimensional-selection corollary
+      live in the planned \texttt{dcl-formalism} package.
+\item \emph{Boltzmann / NS proof.}  Sections~\ref{sec:motivating_examples}
+      states the lattice kinetic theory and fluid-limit ansatz as
+      motivating examples; full proofs are deferred to subsequent
+      papers.
+\item \emph{Pinning $\delta p_\min$'s value.}  Whether
+      $\delta p_\min = 1/4$ is forced by the framework, by
+      observational constraints, or by both is investigated in
+      \texttt{dcl-delta-p-min} (Phase~1 theoretical pass) and
+      plausibly in the planned discrete-probability paper.  This
+      paper takes $\delta p_\min > 0$ as a hypothesis and derives
+      the $d_{\max}$ corollary; the value is symbolic.
+\item \emph{The aspirational sequel `A=1 forces linear coordination'}
+      (working name F4 in the user's `raw_thoughts.md`): the claim
+      that, among bipartite lattices, only the diamond-progression
+      family ($\text{coord} = 2d$) admits A=1 non-degenerately.  A
+      conjecture for a follow-up paper, not a result here.
+\item \emph{The aspirational generator-fractal unification}
+      (`prize-of-prizes' in `raw_thoughts.md`): a single
+      IFS / Bratteli diagram / operad generating the diamond
+      progression as a fractal across $d$.  Aspirational; future
+      work.
 \end{itemize}
 
 The audit table (Table~\ref{tab:audit}) is the canonical answer to
-"has this claim been proved yet?".
+``has this claim been proved yet?''.
 
 %% The audit table is included here so the reader meets it before any
 %% claim that depends on a status entry.
