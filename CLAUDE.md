@@ -190,6 +190,12 @@ authority; this section is for quick orientation only.
   normalise.  Use British forms (-ise, -ation, neighbour, colour)
   when in doubt -- consistent with issue drafts 001-006 in
   `dcl-project`.
+- **Handoffs (cross-session).** At the end of a unit of work another
+  session needs to pick up (the PM, or another repo's Claude), file a
+  handoff via the **`/handoff`** skill -- a committed record under
+  `dcl-project/handoffs/` with required frontmatter and an explicit
+  *Consumer actions* list. Don't use chat-paste status as the system of
+  record (lossy; buried risk-flags get dropped).
 
 ---
 
