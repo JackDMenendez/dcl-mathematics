@@ -110,6 +110,7 @@ Appendices: Symbols, Terms, Code and Data, Reproducibility.
   diamond progression construction; consider renaming to
   `notes/diamond_progression.md` during Phase~2),
   [[automorphism_algebra_n_dim]], [[discrete_to_continuum_limits]].
+- Cross-subproject: [[bell_chsh_separability_on_lattice]] — the Bell/CHSH separability backbone for **Paper~VI** (`dcl-paper-06-Bell-test`); housed here as shared mathematics, not Paper~IV scope.
 - Related paper sections: all of `paper/sections/`.
 - Related repos: `external/dcl` (Paper~I, upstream guardrail);
   `external/dcl-delta-p-min` (empirical investigation of
