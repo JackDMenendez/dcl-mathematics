@@ -1,0 +1,4 @@
+# Configures latexmk for the PDF build (leanblueprint pdf).
+$pdf_mode = 1;
+$pdflatex = 'xelatex -synctex=1';
+@default_files = ('print.tex');

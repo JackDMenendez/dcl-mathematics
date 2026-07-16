@@ -14,5 +14,11 @@ name = "mathlib"
 scope = "leanprover-community"
 rev = "v4.32.0"
 
+# Blueprint declaration checker: `lake exe checkdecls blueprint/lean_decls`
+# verifies every Lean name referenced in the blueprint actually exists.
+[[require]]
+name = "checkdecls"
+git = "https://github.com/PatrickMassot/checkdecls.git"
+
 [[lean_lib]]
 name = "DclFormalism"

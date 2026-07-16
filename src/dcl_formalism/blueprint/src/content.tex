@@ -1,0 +1,136 @@
+% The mathematical content of the blueprint, shared by the PDF and web builds.
+% Each result carries:
+%   \lean{...}   the Lean declaration that formalises it
+%   \leanok      the Lean proof is complete and checked
+%   \notready    stated here, Lean proof still to be written (Phase 2)
+%   \uses{...}   the results it depends on (drives the dependency graph)
+
+\chapter{The integer lattice base}
+
+\begin{definition}[Sites]
+  \label{def:site}
+  \lean{DclFormalism.Site}
+  \leanok
+  For a dimension $d$, the \emph{sites} of the lattice $\Lambda_d$ are the
+  integer points of $d$-dimensional space; that is, the elements of
+  $\mathbb{Z}^d$.
+\end{definition}
+
+\begin{definition}[Parity colouring]
+  \label{def:parity}
+  \lean{DclFormalism.parity}
+  \leanok
+  \uses{def:site}
+  The \emph{parity} of a site is the parity --- even or odd --- of the sum of
+  its coordinates, taken as an element of the two-element ring
+  $\mathbb{Z}/2\mathbb{Z}$. The even sites form one side of the bipartition,
+  written $V^{+}$; the odd sites form the other, written $V^{-}$. This is the
+  strict even/odd integer indexing of the diamond progression.
+\end{definition}
+
+\begin{definition}[Adjacency geometry]
+  \label{def:geometry}
+  \lean{DclFormalism.Geometry}
+  \leanok
+  \uses{def:site}
+  A translation-invariant \emph{geometry} on $\Lambda_d$ is a finite set of
+  neighbour offsets $O \subseteq \mathbb{Z}^d$. The \emph{neighbours} of a site
+  $x$ are the translates $x + o$ for $o \in O$, and the \emph{coordination
+  number} at $x$ is the number of distinct neighbours. Different geometries ---
+  nearest-neighbour, extended-neighbour, the diamond progression --- are simply
+  different offset sets, and so carry different coordination numbers. This is
+  the general base that every specific lattice reuses.
+\end{definition}
+
+\begin{lemma}[Coordination is uniform]
+  \label{lem:coord_card}
+  \lean{DclFormalism.Geometry.coordination_eq_card}
+  \leanok
+  \uses{def:geometry}
+  For every geometry $G$ and every site $x$, the coordination number at $x$
+  equals the number of offsets $\lvert O \rvert$. In particular it is the same
+  at every site.
+\end{lemma}
+\begin{proof}
+  \leanok
+  Translation by $x$ is injective, so the map $o \mapsto x + o$ sends the offset
+  set bijectively onto the neighbour set and therefore preserves cardinality.
+\end{proof}
+
+\begin{definition}[Bipartite geometry]
+  \label{def:bipartite}
+  \lean{DclFormalism.Geometry.Bipartite}
+  \leanok
+  \uses{def:parity, def:geometry}
+  A geometry is \emph{bipartite} (with respect to the parity colouring) when
+  every offset has odd parity.
+\end{definition}
+
+\begin{lemma}[Edges cross the bipartition]
+  \label{lem:neighbour_parity}
+  \lean{DclFormalism.Geometry.neighbour_parity}
+  \leanok
+  \uses{def:bipartite}
+  In a bipartite geometry every neighbour of a site has the opposite parity;
+  hence every edge joins $V^{+}$ to $V^{-}$.
+\end{lemma}
+\begin{proof}
+  \leanok
+  Parity is additive under translation, so adding an odd-parity offset flips the
+  coordinate-sum parity.
+\end{proof}
+
+\chapter{The diamond progression}
+
+\begin{definition}[Diamond progression]
+  \label{def:diamond}
+  \lean{DclFormalism.IsDiamondProgression}
+  \leanok
+  \uses{def:bipartite, lem:coord_card}
+  A geometry is a \emph{diamond progression} in dimension $d$ when it is
+  bipartite and its coordination number equals $2d$ at every site.
+\end{definition}
+
+\begin{proposition}[Offset count]
+  \label{prop:offsets_card}
+  \lean{DclFormalism.IsDiamondProgression.offsets_card}
+  \leanok
+  \uses{def:diamond, lem:coord_card}
+  A diamond-progression geometry has exactly $2d$ offsets.
+\end{proposition}
+\begin{proof}
+  \leanok
+  Immediate from the definition together with Lemma~\ref{lem:coord_card}: the
+  coordination number, which the definition fixes at $2d$, equals the number of
+  offsets.
+\end{proof}
+
+\chapter{The three result-density theorems}
+
+These three theorems are the structural spine of Paper~IV. Their target values
+are recorded in Lean (\texttt{coordinationTarget}, \texttt{maxHopTarget},
+\texttt{unitCellVolumeTarget}); the proofs that the geometric quantities equal
+them are the Phase-2 deliverable, so each statement is marked \notready\ until
+its Lean proof lands.
+
+\begin{theorem}[Coordination is linear]
+  \label{thm:coord}
+  \uses{def:diamond}
+  \notready
+  For the diamond progression, the coordination number is $\coord(d) = 2d$.
+\end{theorem}
+
+\begin{theorem}[Maximum hop]
+  \label{thm:maxhop}
+  \uses{def:diamond}
+  \notready
+  The longest single edge in the unit cell of the diamond progression has
+  Euclidean length $\sqrt{d}$.
+\end{theorem}
+
+\begin{theorem}[Unit-cell volume]
+  \label{thm:volume}
+  \uses{def:diamond}
+  \notready
+  The unit cell of the diamond progression has volume $(d+1)^{(d-1)/2}$.
+\end{theorem}

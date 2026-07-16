@@ -1,0 +1,14 @@
+% Macros and settings shared by both the PDF and web versions.
+
+% Theorem-like environments that appear in the dependency graph. They share the
+% `theorem` counter and are never reset.
+\newtheorem{theorem}{Theorem}
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{corollary}[theorem]{Corollary}
+
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definition}
+
+% --- Project macros ---
+\newcommand{\coord}{\operatorname{coord}}

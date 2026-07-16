@@ -1,0 +1,24 @@
+% Printable (PDF) version of the blueprint. Compile with: leanblueprint pdf
+% (uses xelatex via latexmkrc). The \lean/\leanok/\uses/etc. macros are
+% dummy-defined in macros/print.tex so the PDF ignores the web-only decorations.
+\documentclass[a4paper]{report}
+
+\usepackage{geometry}
+
+\usepackage{expl3}
+
+\usepackage{amssymb, amsthm, mathtools}
+\usepackage[unicode,colorlinks=true,linkcolor=blue,urlcolor=magenta, citecolor=blue]{hyperref}
+
+\usepackage[warnings-off={mathtools-colon,mathtools-overbracket}]{unicode-math}
+
+\input{macros/common}
+\input{macros/print}
+
+\title{Blueprint: The Diamond Progression}
+\author{Jack Dee Menendez}
+
+\begin{document}
+\maketitle
+\input{content}
+\end{document}
