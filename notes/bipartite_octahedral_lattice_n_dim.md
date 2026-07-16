@@ -46,6 +46,58 @@ specific projection (which of two natural choices into
 $\mathbb{R}^d$) are open questions; both must be locked before
 the three theorems' proofs begin.
 
+### Local topology, adjacency, and orientation (2026-07-16)
+
+Per-node structure, in the user's working notation.  For a node $n$:
+
+- **Topology** $T_n = \{t_{n,0}, t_{n,1}, \dots, t_{n,6}\}$ -- the node
+  together with its neighbours (the *closed* neighbourhood).
+- **Adjacency** $A_n = \{t_{n,1}, \dots, t_{n,6}\}$ -- the six
+  neighbours (the *open* neighbourhood).  The one member of the
+  topology that is not adjacent, $t_{n,0}$, is the node itself (the
+  centre).
+- **Orientation** -- the six neighbours sit at the offsets
+  $\{V_1, V_2, V_3, -V_1, -V_2, -V_3\}$, i.e.
+  $t_{n,i} = n + V_i$ and $t_{n,i+3} = n - V_i$ for $i = 1,2,3$.
+  The three axis vectors $\{V_1, V_2, V_3\}$ are $3$ of the $4$
+  tetrahedral axes; the omitted $4$th axis is a **gauge choice**
+  (resolved below), not a physical degree of freedom.
+
+Generalised to dimension $d$: the topology $T_n = \{t_{n,0}, \dots,
+t_{n,2d}\}$ has $2d + 1$ members; the adjacency $A_n$ has $2d$;
+the offsets are $\{\pm V_1, \dots, \pm V_d\}$ with $\{V_1, \dots, V_d\}$
+being $d$ of the $d+1$ axes.  This maps onto the Lean base
+(`src/dcl_formalism/DclFormalism/Lattice.lean`): $A_n$ is
+`Geometry.neighbours`, $T_n$ is `Geometry.topology` (the closed
+neighbourhood), and the axis list $\{V_1, \dots, V_d\}$ is
+`Orientation`, from which the offset set $\{\pm V_i\}$ is derived.
+
+**Three counts that must not be conflated** (this disambiguates
+Open Question 4):
+
+| Count | What it is | Value ($d=3$) | Role |
+|---|---|---|---|
+| $d+1$ | axes / simplex vertices | $4$ | the $\delta p_\min$ probability slots |
+| $2d$ | neighbours (adjacency $A_n$) | $6$ | the coordination number |
+| $2d+1$ | topology $T_n$ (centre + neighbours) | $7$ | the closed neighbourhood |
+
+The dimensional-selection argument counts the **axes** ($d+1$),
+*not* the neighbours ($2d$) and *not* the topology ($2d+1$).  The
+$2d+1$ that previously looked like a candidate slot count is just the
+closed-neighbourhood size (it double-counts each axis by sign and adds
+the centre).
+
+**Resolution of Open Question 1 (which $d$ of the $d+1$ vertices).**
+The simplex's symmetry group $S_{d+1}$ permutes the vertices
+transitively, so the $\binom{d+1}{d} = d+1$ ways to choose $d$ of the
+$d+1$ axes (equivalently, which one axis to *omit*) give $d+1$
+*congruent* orientations -- related by a rotation, isomorphic as
+graphs.  So the choice is free up to symmetry (a gauge choice), but it
+leaves a genuine $(d+1)$-fold **orientational degeneracy** (a
+distinguished omitted axis).  At $d=3$ this is the user's "$4$ possible
+orientations."  The gauge need not be a single global choice -- a
+per-node assignment is admissible; see the progression fork below.
+
 ### Claims to establish (Phase 2)
 
 1. The bipartition is well-defined for all $d \geq 2$ and every
@@ -86,11 +138,67 @@ would have to carry less than $\delta p_\min$.  The proof
 probability slots; the explicit count ($d + 1$ slots, each
 $\geq \delta p_\min$) is the Phase~2 verification target.
 
+**Axes = slots (2026-07-16).**  The $d+1$ slots are the $d+1$
+**simplex axes**, not the $2d$ neighbours nor the $2d+1$ topology
+members (see the count table above).  The geometric picture makes the
+count concrete: each of the $d+1$ axes carries one probability slot
+$\geq \delta p_\min$, and A=1 unity caps their sum at $1$, so
+
+$$(d+1)\,\delta p_\min \leq 1 \quad\Longrightarrow\quad
+  d + 1 \leq \frac{1}{\delta p_\min} \quad\Longrightarrow\quad
+  d_\max = \frac{1}{\delta p_\min} - 1.$$
+
+At $\delta p_\min = 1/4$: $d+1 \leq 4$, so $d_\max = 3$, with exactly
+$4$ slots $=$ $4$ axes $=$ $4$ orientations.  This ties the geometry
+(the $d+1$ axes) directly to the dimensional-selection corollary and
+settles Open Question 4 on the $d+1$ side.
+
+### The higher-dimensional progression: global gauge vs gauge field (2026-07-16, research thread)
+
+How the progression climbs to higher $d$ has two candidate shapes
+(the user's "either / or"), distinguished by how the orientational
+freedom scales.  The neighbour cluster is a **cross-polytope**
+(generalised octahedron) with three different growth laws:
+
+- neighbours (vertices): $2d$,
+- orientations (choices of $d$-of-$(d+1)$): $d+1$ (linear),
+- facets: $2^d$ (exponential).
+
+The fork is whether orientation is one global label or a local field:
+
+- **(A) Diamonds with more orientations** -- the monolithic reading:
+  one $d$-dimensional cross-polytope, a single **global** gauge with
+  $d+1$ choices.
+- **(B) Polyhedrons with more faces, each with $4$ orientations** --
+  the composite reading: the object has $2^d$ facets; if the
+  fundamental *orientable* unit stays the 3D tetrahedron (always $4$
+  choices), higher-$d$ structures are **assemblies of 3D units**, each
+  carrying its **own** independent $4$-fold gauge.
+
+Reading (B) is the one the user's remark "the choice does not have to
+be the only choice" points to: if each 3D sub-unit picks its gauge
+**independently**, the orientation becomes a **field over the lattice,
+not a constant** -- a per-cell assignment of "which axis is omitted."
+That is precisely a **discrete connection** (a gauge field), so
+non-uniform orientation $=$ non-zero **discrete curvature**.  This lands
+on the discrete-differential-geometry thread
+([[discrete_differential_geometry_on_lattice]]): the orientation field
+is a candidate for the lattice connection, and its curvature a
+candidate observable.  Reading (B) also keeps **3D as the privileged
+unit** even inside higher-$d$ assemblies, beside the $\delta p_\min$
+selection of $d = 3$.  Both readings stay live until the $\delta p_\min$
+accounting decides whether higher $d$ is genuine or assembled.
+
 ## Open questions
 
-1. **Offset set.**  Which $d$ of the $d+1$ simplex vertices?
-   Standard convention (e.g.\ omit the apex) vs equivalent
-   alternatives.  Pin before Theorem~1 proof.
+1. **Offset set.**  ~~Which $d$ of the $d+1$ simplex vertices?~~
+   *RESOLVED (2026-07-16):* any $d$-of-$(d+1)$ choice.  The $d+1$
+   choices are related by the transitive $S_{d+1}$ action on the
+   axes, so they give $d+1$ congruent (graph-isomorphic) orientations
+   -- a gauge choice, not a pinned convention.  See "Local topology,
+   adjacency, and orientation" above.  The remaining open part is
+   whether the gauge is global or a per-node field (progression fork,
+   readings A/B).
 2. **Projection convention.**  Two natural projections of the
    regular $(d+1)$-simplex into $\mathbb{R}^d$.  Verify they give
    the same max-hop value $\sqrt{d}$ (Theorem~2).
@@ -98,11 +206,15 @@ $\geq \delta p_\min$) is the Phase~2 verification target.
    enter -- in the combinatorial setup (Section~2) or in
    Section~5 when integration by parts demands a metric?  Decide
    once.
-4. **Slot count in the $d_\max$ proof.**  Verify the $d + 1$
-   probability slots invoked in
-   Theorem~\ref{thm:dp_min_dmax}'s proof sketch is precise.
-   Alternative counts (e.g.\ $2d + 1$ via the coordination
-   counting) would change the $d_\max$ formula.
+4. **Slot count in the $d_\max$ proof.**  ~~Verify the $d + 1$
+   probability slots...~~  *RESOLVED (2026-07-16):* the slots are the
+   $d+1$ **axes** (simplex vertices), giving $(d+1)\delta p_\min \leq 1$
+   and $d_\max = 1/\delta p_\min - 1$.  The $2d+1$ alternative is the
+   closed-neighbourhood (topology) size, not a slot count -- it
+   double-counts each axis by sign and adds the centre.  See the count
+   table in "Local topology, adjacency, and orientation" and "Axes =
+   slots" above.  (Still to formalise: that the $\delta p_\min$ mass
+   genuinely attaches to axes, not neighbours.)
 5. **Contrast with chemical diamond.**  Spell out the precise
    difference (chemical diamond has coord 4 at all $d$; diamond
    progression has $2d$).  Connection to the "diamond" name --
