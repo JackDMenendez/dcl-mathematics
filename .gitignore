@@ -47,6 +47,12 @@ ENV/
 htmlcov/
 coverage.xml
 
+# Lean / Lake build artifacts (Mathlib project under src/dcl_formalism/)
+# .lake/ holds build outputs AND the fetched dependency clones (Mathlib is
+# hundreds of MB) -- never commit it; it is reproducible from lake-manifest.json.
+.lake/
+
 # OS junk
 .DS_Store
 Thumbs.db
+.vsisolation/

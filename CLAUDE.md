@@ -49,9 +49,16 @@ sharper.  This update incorporates:
   row for the dimensional-selection corollary (depends on
   `dcl-delta-p-min`'s Phase 1 pinning of $\delta p_\min$);
   remaining toolkit-internal rows STUB.
+- **Lean/Mathlib toolchain (2026-07-15):** a Lean~4 + Mathlib
+  (`v4.32.0`) Lake project is set up under `src/dcl_formalism/`
+  (build verified against Mathlib).  This is where the three
+  theorems get machine-checked.  Invoke Lean via the `vscode-lean`
+  launcher (`$env:WCDE_VSCODE_PROFILE = lean`); if `lean`/`lake`
+  are not on PATH, prepend `%USERPROFILE%\.elan\bin`.
 - **Next concrete action:** prove Theorem~1 (coord$(d) = 2d$) in
   Section~3.  The construction is small but the proof should land
-  cleanly; it sets the precision target for Theorems~2-3.
+  cleanly; it sets the precision target for Theorems~2-3.  Once the
+  prose proof lands, formalise it in `src/dcl_formalism/`.
 
 Update this block whenever the answer to "what is the next action"
 changes.
@@ -71,15 +78,28 @@ the geometry, and derives the dimensional-selection corollary
 $d_\max = 1/\delta p_\min - 1$ (which, with $\delta p_\min$ pinned
 by `dcl-delta-p-min`, forces $d = 3$).
 
-No code lives here -- the sympy operationalisation of selected
-theorems belongs in the planned `dcl-formalism` package; the
-empirical investigation of $\delta p_\min$ lives in
-`dcl-delta-p-min`; the physics applications are their own paper
-repos.  This repository proves the structural mathematics.
+The machine-checked formalisation lives **in this repo** under
+`src/dcl_formalism/` -- a Lean~4 + Mathlib (`v4.32.0`) Lake project
+(added 2026-07-15).  This is consistent with the repo's intent, not
+an exception to it: the "no code lives here" rule was scoped to
+**Python** -- numerics and the sympy operationalisation -- which
+still belongs in the planned `dcl-formalism` package (and in
+`dcl-delta-p-min`).  Lean/Mathlib proofs are a different thing: they
+*are* the structural mathematics, machine-checked, so they are
+welcome co-located with the paper.  The Lean project's build cache
+(`.lake/`, includes the Mathlib clone) is gitignored; the project is
+reproducible from `src/dcl_formalism/lake-manifest.json` via
+`lake exe cache get`.  The empirical investigation of $\delta p_\min$
+still lives in `dcl-delta-p-min`; the physics applications are their
+own paper repos.
 
-The repository is *paper-only*.  Publication decision deferred;
-the paper-shape is load-bearing as the series' canonical internal
-mathematical reference regardless of external peer review.
+The repository is *paper + Lean formalisation*: prose proofs plus
+their Mathlib machine-checking (Lean project landed 2026-07-15).
+The "no code" convention was only ever Python-scoped -- numerics and
+sympy stay out (see "What This Project Is"); Lean proofs belong here.
+Publication decision deferred; the paper-shape is load-bearing as the
+series' canonical internal mathematical reference regardless of
+external peer review.
 
 ---
 
