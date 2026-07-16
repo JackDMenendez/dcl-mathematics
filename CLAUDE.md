@@ -293,6 +293,12 @@ internal-reference tag.
   record by A=1 accounting; at least some of Paper II's 51 unused
   generators conjectured to be the record-keepers; some virtual
   particles may be residual records.
+- `notes/prior_work_dimension_from_adjacency.md` -- related-work /
+  positioning note (2026-07-16): positions the diamond progression +
+  $\delta p_\min$ selection against causal sets / CDT / Wolfram
+  (emergent dimension) and $D_d$/$A_d$/cross-polytope theory (the
+  geometry); claims novelty narrowly on the unified construction + the
+  $\delta p_\min$ mechanism.  Citations hardened by a `deep-research` run.
 
 External pointer: `c:/dev/physics-research/notes/raw_thoughts.md`
 2026-05-21 entries are the upstream source for the v0.2
