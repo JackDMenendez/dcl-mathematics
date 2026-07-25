@@ -200,6 +200,132 @@ hypothesis "violation requires $\delta p_\min>0$ and vanishes in the continuum"
 runs against the usual grain and carries a high burden — see
 [[discrete_to_continuum_limits]].
 
+### 10. Coherence as a combinatorial roll-out (added 2026-07-25)
+
+A framing from the philosophy thread ([[platos_cave_invariant_observer]]):
+**coherence is a combinatorial process rolled out by the sieve.**  What that
+buys, what it does not, and one obstruction that connects §8 to §9.
+
+#### 10.1 What it buys: condition (ii) for free
+
+A sieve that rolls out coherence over **joint** configurations delivers §5(ii)
+by construction -- the draw is one event over the pair, not two independent
+local draws.  This gives `measure_pair(mode="joint")` an ontological basis
+rather than leaving it an implementation choice.
+
+#### 10.2 What it does not buy: a global roll-out *is* $\lambda$
+
+Combinatorics over global configurations, with outcomes read off locally, is an
+LHV model -- not approximately, exactly.  Put $\lambda$ = the rolled-out global
+configuration.  If the enumeration is setting-independent and each side's
+outcome is determined by that configuration restricted to that side, then
+$$
+P(A,B\mid a,b) = \sum_\lambda \rho(\lambda)\,P(A\mid a,\lambda)\,P(B\mid b,\lambda),
+$$
+which is (LHV) verbatim, closed by §4 and Fine.  Note that **correlating the
+distribution does not help**: $\rho(\lambda)$ may be arbitrarily correlated in
+an LHV model, so a non-product admissible *set* buys nothing on its own.
+
+Taken naively, therefore, "coherence is combinatorial" lands **inside** the
+bound -- §2's verdict arriving by a new route.  The combinatorial framing is
+the most natural way to *build* a hidden-variable model, not a loophole.
+
+#### 10.3 The version that works: local sections with no global completion
+
+The escape is precise: the roll-out must be **local with no global
+completion.**  The sieve may not enumerate global configurations that determine
+every local outcome, because that object *is* $\lambda$.  What it can do is
+produce local sections that are pairwise consistent yet admit no global
+section.
+
+This is formalised.  Abramsky and Brandenburger (2011) show non-locality and
+contextuality are **exactly** the obstruction to gluing local sections into a
+global one: an LHV model *is* a global section of the presheaf of local
+outcome-assignments, and violation *is* its non-existence.  Follow-on work
+gives the obstruction cohomological form (Abramsky, Barbosa, Kishida, Lal,
+Mansfield).
+
+This joins the two threads: the sieve-as-Grothendieck-topology of
+[[platos_cave_invariant_observer]] §4 and the argument of this note are the
+same mathematics.  **Coherence is sheaf-like, and Bell violation is the failure
+of coherence to glue globally.**  Contextuality is then not an extra assumption
+bolted on -- it is what an internal modality on truth values does when local
+truth has no global witness.
+
+#### 10.4 Complex amplitudes, and A=1 already entails them
+
+The roll-out requires complex amplitudes, and **A=1 already commits to them**:
+normalisation is only meaningful for a vector in an inner-product space, so
+"the amplitudes sum to one" presupposes the structure Tsirelson's bound comes
+from.  The quantum geometry was in the first axiom; the combinatorial roll-out
+does not need to acquire it, only to avoid destroying it.
+
+Three precisions:
+
+- **It is the inner product, not complexness as such, that caps at $2\sqrt2$.**
+  Real-amplitude quantum mechanics also reaches Tsirelson on CHSH;
+  distinguishing real from complex needs a *network* Bell scenario, not a
+  single pair.  For Open Question 5, the cap is enforced by unit vectors and
+  inner products.  (Tsirelson's route to the bound runs through Grothendieck's
+  inequality.)
+- **What complex specifically buys is phase, hence interference, hence the
+  curvature.**  §5's discriminating signature -- cosine versus linear -- is
+  amplitudes adding *before* squaring.  No phase, no interference, no cosine,
+  no overshoot.  Complex is load-bearing for the *signature* even if real
+  suffices for the *bound*.
+- **Unitarity hands us §8(ii) for free.**  Norm-preserving evolution is
+  non-signalling automatically, demoting no-signalling from an assumption to be
+  audited to a consequence -- and reframing what `floor_ledger` tests: not
+  hygiene, but whether the implementation stayed faithful to unitarity.
+
+#### 10.5 The Gisin obstruction: §9 is the likeliest way to fail §8
+
+§9 wants $\delta p_\min$ to be the entangling nonlinearity.  §8 requires
+non-signalling.  **These are in direct tension.**  Gisin (1990, on Weinberg's
+nonlinear quantum mechanics) showed that nonlinear modifications of
+Schrödinger evolution generically permit superluminal signalling *using
+entangled states* -- and the mechanism is this setup: a nonlinearity acting on
+a shared budget, plus an entangled pair, lets one side's choice shift the
+other's marginal.
+
+A nonlinearity strong enough to entangle is generically strong enough to
+signal.  So §8 and §9 are **not independent concerns**; §9 is the most likely
+way to fail §8, and a clean `floor_ledger` would be the surprise requiring
+explanation rather than the expected result.
+
+#### 10.6 The proposed resolution: admissibility, not a clamp
+
+Two very different things "the floor" could be, and §5's description is the
+dangerous one -- `prob_floor` *clamps* sub-quantum probabilities and
+renormalises, which is a nonlinear map on evolving amplitudes.  That is
+precisely Gisin's target.
+
+The alternative: make the floor a condition on **admissibility** rather than a
+clamp on dynamics.  The sieve does not reach in and modify amplitudes; it
+determines *which configurations roll out at all*.  Below the mesh a
+configuration is not clamped -- it is simply not admissible.  Evolution between
+selections stays unitary, and the floor acts as an **idempotent selection** on
+the admissible set.
+
+This is the same distinction as *selection, not degradation* in
+[[platos_cave_invariant_observer]] §4.2: a reflector is idempotent and fixes
+what already coheres, whereas a clamp-and-renormalise moves everything it
+touches, every time.  Gisin's argument bites on the second and has no obvious
+purchase on the first.
+
+It is also a **code-level fork** -- floor-as-admissibility versus
+floor-as-clamp -- which is the kind of thing §9 wanted to be decidable.
+
+#### 10.7 God-eye discipline
+
+Amplitudes are visible in simulation (one prints the array); no observer has
+that view.  §8 already states this for one case -- locality enforced
+computationally, A's outcome computed without reading B's setting.  The general
+form: **a result is physical only if derivable from observer-accessible
+quantities** (counts, coincidences, invariants).  God-eye inspection verifies
+the code; it is never evidence about the world.  See
+[[platos_cave_invariant_observer]] §6.
+
 ---
 
 ## Conclusions
@@ -249,7 +375,29 @@ runs against the usual grain and carries a high burden — see
 5. **Tsirelson, not beyond.** A bound-respecting model must not exceed $2\sqrt2$.
    Does the lattice cap at Tsirelson, or can a global combinatoric rebalance
    overshoot (PR-box territory, unphysical)? Overshoot would be a defect to
-   diagnose, not a triumph.
+   diagnose, not a triumph. *(§10.4: the cap is enforced by inner-product
+   structure, which A=1 already supplies. A roll-out defined by bare counting
+   rather than carried by amplitudes has no reason to respect it -- this is the
+   main open burden on the combinatorial framing.)*
+6. **Measurement dependence -- a door §8 does not guard (added 2026-07-25).**
+   §8 audits *signalling*: is Alice's marginal independent of Bob's setting
+   (`floor_ledger`). That is necessary but does **not** test the other LHV
+   assumption, $\rho(\lambda\mid a,b) = \rho(\lambda)$. A *global*
+   combinatorial admissibility condition (§10) naturally wants to constrain
+   everything in scope -- **including the settings** -- and if it does, the
+   violation comes for free by superdeterminism, with no signalling anywhere
+   and a clean `floor_ledger`. It would pass the existing audit and still be
+   the cheap, widely-rejected loophole. Required: an explicit statement that
+   admissibility does not correlate settings with the hidden state -- or an
+   open concession of measurement dependence. This risk is specific to the
+   combinatorial framing.
+7. **Floor-as-admissibility or floor-as-clamp (added 2026-07-25).** §10.5--10.6:
+   does `prob_floor` clamp-and-renormalise evolving amplitudes (nonlinear
+   dynamics, Gisin's target, generically signalling), or restrict which
+   configurations are admissible (idempotent selection, unitary between
+   selections)? This is a code-level fact that decides whether §9's
+   entangling-nonlinearity thesis can coexist with §8's non-signalling
+   requirement.
 
 ---
 
@@ -272,4 +420,9 @@ runs against the usual grain and carries a high burden — see
 - **External:** Bell (1964); Clauser–Horne–Shimony–Holt (1969); Tsirelson (1980);
   Fine (1982, stochastic$\equiv$deterministic LHV); Nelson (stochastic mechanics
   and its entanglement nonlocality); Yin et al. (Micius, distance-independent
-  Bell violation at 1200 km).
+  Bell violation at 1200 km). *Added for §10:* Abramsky and Brandenburger
+  (2011, *The sheaf-theoretic structure of non-locality and contextuality*);
+  Abramsky, Barbosa, Kishida, Lal, Mansfield (cohomological obstructions to
+  contextuality); Gisin (1990, nonlinear quantum mechanics permits superluminal
+  signalling); Renou et al. (2021, real versus complex quantum theory needs a
+  network Bell test).

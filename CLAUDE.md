@@ -299,6 +299,16 @@ internal-reference tag.
   (emergent dimension) and $D_d$/$A_d$/cross-polytope theory (the
   geometry); claims novelty narrowly on the unified construction + the
   $\delta p_\min$ mechanism.  Citations hardened by a `deep-research` run.
+- `notes/platos_cave_invariant_observer.md` -- philosophy / framing
+  thread (2026-07-25): the ontology behind A=1 as Plato's cave with the
+  chains rewritten as *invariance*; topos-theoretic translation (sieve
+  = Grothendieck topology, coherence = sheafification, screen = topos,
+  Yoneda as the inside-observer epistemology, Lawvere--Tierney for the
+  sieve's internality); "only discreteness is visible" inverting the
+  discrete-to-continuum direction; the God-eye (numpy) discipline.
+  Companion figure `figures/philosophical.drawio`.  **Framing only --
+  no audit row**; the mesh-to-dimension step is held by open handoff
+  `2026-07-16-dpmin-derived-or-fitted-gate`.
 
 External pointer: `c:/dev/physics-research/notes/raw_thoughts.md`
 2026-05-21 entries are the upstream source for the v0.2

@@ -1,0 +1,29 @@
+Definition ot L__3_diamond:
+Let l_n_j ∊ L = { l_n_0, l_n_1, l_n_2, l_n_3, l_n_4, l_n_5, l_n_6 } 
+Let l_n_i ∊ T_RGB  = { l_n_1, l_n_2, l_n_3 }
+Let l_n_k ∊ T_CMB = { l_n_4, l_n_5, l_n_6 } 
+∃ V_n ∊ V_RGB = { V1, V2, V3 }
+V(l_n_0)->l_n_j ∊ L 
+
+l_n_1               l_n_3      
+  ^       l_n_2       ^
+   \        ^        /
+    \       |       /
+     \      |      /
+     V_1    |    V_3
+       \   V_2   /
+        \   |   /
+         R  |  B
+          \ G /
+           \|/
+          l_n_0
+           /|\
+          / M \
+         C  |  B
+        /   |   \
+       /  -V_2   \
+    -V_1    |   -V_3
+     /      |      \
+    /       |       \
+   /      l_n_5      \
+l_n_4               l_n_6
