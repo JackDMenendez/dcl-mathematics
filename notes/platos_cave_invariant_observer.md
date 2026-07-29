@@ -258,6 +258,58 @@ mechanism behind point 9 -- the mesh is measurable from inside because the
 sieve is inside.  One is not inferring a distant machine; one is detecting the
 grain of an operator one is built out of.
 
+### 4.9 Geometry is a morphism, not an object (added 2026-07-30)
+
+The lattice has adjacency and no metric, so distance is the **word metric** --
+fewest hops -- whose unit ball is the convex hull of the hop set: a polytope,
+never a sphere.  But *in that metric the polytope **is** the sphere*, since the
+unit sphere of a norm is by definition the points at distance one.  Calling it
+anisotropic imports a Euclidean standard the observer does not have.  This is
+§4.5 arriving in geometric dress.
+
+The categorical statement is about **naturality**.  Take each sector -- induced
+gauge, matter, any other propagating field -- as a functor from the lattice's
+structure to observables.  Then:
+
+- A transformation that acts **uniformly on every sector** assembles into a
+  **natural isomorphism**.  No functorial observable can distinguish naturally
+  isomorphic things.  So a universal cone distortion carries **no observable
+  content** -- which is Poincaré's conventionality of geometry, stated
+  categorically.
+- A **sector-dependent** distortion does not assemble into one natural
+  transformation.  In the intuition that makes naturality memorable, it
+  **peeks**: the rule varies according to which sector it is acting on.  That
+  failure of naturality is precisely the signal.
+
+> **The observable content is exactly the obstruction to naturality.**
+
+This is the same shape as the contextuality result of
+[[bell_chsh_separability_on_lattice]] §10.3, where the observable content is
+the obstruction to *gluing*.  Two different obstructions, one pattern: **the
+physics lives in what fails to be global.**  A framework in which everything
+glued and everything were natural would predict nothing.
+
+It also unifies with the calibration argument of
+[[bell_chsh_separability_on_lattice]] §11.  Calibration is a uniform
+relabelling -- units, spacings, dictionaries -- hence a natural isomorphism,
+hence invisible to any functorial observable.  **Calibration invariance and the
+conventionality of geometry are one statement**, not two: transformations that
+act on everything at once carry nothing.
+
+Hence the punchline, and the reason this belongs in the category description
+rather than only in the test plan:
+
+> Geometry is not an attribute of the lattice.  It is the **comparison between
+> sectors** -- not an object, a morphism.
+
+Which is §4.5 once more.  Structure through relations, never essence: you never
+obtain the geometry itself, only how things measure against one another, up to
+a transformation that moves everything together and changes nothing.
+
+The operational form of all this is
+[[successor_geometries_simplex_face_lattice]] §3.6 -- absolute isotropy is not
+the test; **sector agreement** is.
+
 ---
 
 ## 5. Only discreteness is visible
@@ -308,6 +360,99 @@ And the loop closes: the observer is an invariant pattern of sites, so seeing
 lattice-wise.  "Observers can only see discreteness" is not a restriction
 imposed from outside; it is the observer being the same kind of thing as what
 it observes.
+
+### 5.1 Zero, null, and the empty set (added 2026-07-28)
+
+If probabilities are whole-number multiples of the minimum quantum, does the
+sieve need **zero**?  Three things get called "nothing" here and they come
+apart:
+
+- **Zero** -- a number, a magnitude, the additive identity.
+- **The empty set** -- an object with no elements.  Note that it *has*
+  cardinality zero but is not itself zero.
+- **Null** -- a distinguished value meaning "no value", which is still a value
+  *in the type*.
+
+What actually happens in the sieve is a fourth thing: **non-membership.**  A
+sub-mesh configuration is not zero, not null and not the empty set.  It simply
+is not an element of the admissible set.  Nothing is assigned to it because
+assignment never reaches it.
+
+**A=1 as a partition.**  With a total of one and a quantum of size one over
+$N$, there are $N$ indivisible units to distribute, and the sieve emits a
+**partition of $N$ units** among the admissible configurations.  Partitions
+have no zero parts -- not by convention but by definition; a part of size zero
+is not a part.  Zero's absence is therefore a property of the object the
+formalism produces, not a prohibition imposed on it.
+
+**A=1 forbids the empty set -- globally.**  A partition of $N \ge 1$ always has
+at least one part, so the admissible set is never empty.  Two statements must
+be kept apart:
+
+- *this configuration did not cohere* -- non-membership, entirely ordinary;
+- *nothing cohered at all* -- the empty set, ruled out globally by arithmetic.
+
+**Locally**, emptiness is permitted: a region may contain no admissible
+configuration while the global total remains one.  That local empty set is
+exactly "nothing" in the A=1 sense of [[coherence_history_invariant]] --
+*never-cohered*, rather than a region carrying weight zero.
+
+**Not null -- outside the domain.**  In the object-oriented register, null is
+the wrong model for the reason it is a famous mistake: it puts absence *inside*
+the type, so every consumer must test for it.  The right model is a **partial
+function** -- a weighting whose domain *is* the admissible set.  A dictionary
+lookup that misses does not return null; the key was never in the domain.
+
+**The resolution: what replaces zero is a truth value, not a number.**  In a
+topos, a subobject and its characteristic map are the *same data* -- a
+sub-collection corresponds exactly to a map into the object of truth values.
+So "absent from the set" and "flagged inadmissible" are not rival descriptions
+but one thing written twice.  The question then answers itself by noticing what
+the flag takes values in.
+
+This lands on §4.8.  The sieve is a map from the truth-value object to itself:
+it operates on **truth values, not magnitudes**.  The sieve does not need zero
+because *the sieve does not traffic in numbers at all*.  Numbers appear
+downstream, when the surviving configurations receive their partition weights.
+Admissibility is a proposition; the weight is arithmetic; they are different
+levels, and only the second has a number system to worry about.  This is also
+why the intuitionistic internal logic of §4.4 is load-bearing rather than
+decorative: the truth-value object is richer than a two-element set, so "not
+admissible" need not be classical falsity.
+
+**Amplitudes still need zero.**  Nothing above touches the amplitude level, and
+zero is required there.  Destructive interference *is* amplitudes summing to
+zero, and two published results are exact zeros: Paper IV's birefringence
+cancellation (the adjugate closure gives a doubled transverse root, so the
+polarisation split cancels identically) and the M1i exact axial flat band
+(axial transport identically zero).  Neither is stateable without zero, and an
+amplitude algebra with no additive identity is not an inner-product space --
+which [[bell_chsh_separability_on_lattice]] §10.4 says A=1 already requires.
+
+**The ladder.**  Putting the levels in order:
+
+1. **Amplitudes** cancel to zero -- zero is a magnitude here, and necessary.
+2. An **admissibility proposition** fails -- a truth value, not a number.
+3. The configuration is **absent from the domain** -- non-membership.
+4. Survivors carry **positive whole-number weights** summing to one.
+
+Zero appears at the top, truth values in the middle, positive integers at the
+bottom.  No level needs zero as a probability, and no level needs null.  Zero
+is the mechanism by which a configuration *leaves*, never a state it can be in.
+
+**This is the same question as the clamp-versus-admissibility fork.**
+[[bell_chsh_separability_on_lattice]] §10.6 asks whether the floor clamps
+amplitudes (nonlinear dynamics, Gisin's target) or restricts admissibility
+(idempotent selection).  A clamp needs zero as a *value* -- something gets
+written.  Admissibility needs none.  So answering "the sieve does not need
+zero" **selects the admissibility branch**, which is the one that survives
+Gisin and preserves selection-not-degradation.  The two questions were reached
+independently and agree.
+
+Worth one line of history: treating zero as absence rather than magnitude is
+the Greek position, and whether zero is a number at all is an old dispute.  The
+framework lands on the pre-Indian side -- for probabilities, and not for
+amplitudes.
 
 ---
 
@@ -441,6 +586,17 @@ The diagram is not evidence, but the arrows are drawn correctly.
    Section 4 is standard mathematics applied to the structure.  The test of
    whether it is load-bearing rather than decorative is whether it forbids
    something -- Open Question 1 and Section 7.2 are the two candidates.
+6. **Does the partition structure have content?** (§5.1.)  If the sieve emits a
+   partition of $N = 1/\delta p_\min$ indivisible units, the admissible sets
+   are indexed by partitions of a small integer -- four units at the working
+   value.  Whether that combinatorics is merely a restatement or actually
+   constrains which configurations can coexist is unexamined.
+7. **A division in mathematics?** *(User's thread, 2026-07-24 -- logged, not
+   explored.)*  If the screen is rendered through discrete mathematics, there
+   may be a principled split between the mathematics that describes the
+   rendering and the mathematics available to an observer inside it.  §5's
+   representable/non-representable distinction is the nearest thing already
+   written down.
 
 ---
 

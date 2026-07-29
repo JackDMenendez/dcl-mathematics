@@ -326,6 +326,125 @@ quantities** (counts, coincidences, invariants).  God-eye inspection verifies
 the code; it is never evidence about the world.  See
 [[platos_cave_invariant_observer]] §6.
 
+### 11. Calibration invariance: the interface argument (added 2026-07-26)
+
+The lattice's Bell correlations are **dimensionless**, and calibration supplies
+only units.  Therefore no calibration can change the predicted CHSH value.
+This section states that precisely, because it is the one place in the
+programme where a prediction is immune to fitting by construction.
+
+#### 11.1 The wrong shape, and the right one
+
+A first attempt writes a **calibration functor** $F : \mathcal{L} \to
+\mathcal{P}$ from the lattice to physical experiments.  That shape has three
+problems: the objects and morphisms of $\mathcal{P}$ are undefined; a bare
+functor preserves composition and identities and carries **no** promise about
+probability distributions, so "retains the same correlation structure" does not
+follow from functoriality; and it privileges $\mathcal{P}$ as a real world the
+lattice maps onto, which reintroduces the God-eye view §10.7 forbids.
+
+The right shape is the object-oriented one: **an interface, implemented twice.**
+Neither implementation is privileged, and the shared contract is dimensionless.
+
+- Let $\mathrm{Ctx}(\mathcal{D})$ be the category of **measurement contexts** on
+  the discrete causal structure: objects are sets of jointly readable
+  measurements, morphisms are inclusions of a context into a larger one.  Let
+  $\mathrm{Ctx}(\mathcal{P})$ be the same for laboratory configurations.
+- An **empirical model** assigns to each context a probability distribution over
+  its outcomes, agreeing whenever one context restricts into another.  The
+  agreement condition is no-signalling; the *failure* of these local
+  distributions to descend from one global distribution is contextuality
+  (§10.3).
+- **The claim** is a natural isomorphism of empirical models,
+  $$
+  E_{\mathcal{D}} \;\cong\; E \;\cong\; E_{\mathcal{P}},
+  $$
+  with $E$ the shared, unit-free model -- the interface.  Calibration is the
+  relabelling that carries one realisation to the other; the distributions
+  themselves are untouched.
+
+Contextuality is then **transferable rather than asserted**: $E_{\mathcal{D}}$
+has no global section, the comparison is an isomorphism, so $E_{\mathcal{P}}$
+has none either.
+
+#### 11.2 Interface and implementation, precisely
+
+The category-theoretic form of "interface plus implementations" is **Lawvere's
+functorial semantics**: a *theory* is a category, and a *model* is a
+structure-preserving functor out of it.  Two classes implementing one interface
+are two models of one theory.  The operative fact:
+
+> A quantity is implementation-independent **iff it is determined by the theory
+> rather than by the model.**
+
+So the CHSH value is calibration-invariant *precisely if* it is fixed by the
+theory.  That is what has to be shown, and it is a sharper target than "the
+correlations are the same."
+
+**Note for the OOP reading.**  This is a type class *with laws*, not a bare
+interface.  A Java- or C#-style interface constrains **signatures**; behavioural
+conformance (Liskov substitutability) is an extra requirement, usually
+unchecked.  Here the functor axioms **are** the laws, and preserving
+composition is the behavioural clause made mandatory rather than optional.
+That is the whole difference, and it is why the analogy is exact rather than
+decorative.
+
+#### 11.3 What calibration is allowed to do
+
+Calibration supplies the **dimensionful dictionary** and nothing else: what an
+analyser setting is in radians, what a tick is in seconds, what a site spacing
+is in metres.  Correlators $E(a,b)$ are dimensionless; $S$ is dimensionless;
+the bounds $2$ and $2\sqrt2$ are dimensionless.  Hence:
+
+> **Dimensionless invariants are calibration-invariant.**  No choice of units,
+> no fitted constant, and no re-scaling of the lattice can move the predicted
+> $S$ or the shape of $E(\theta)$.
+
+#### 11.4 What this proves, and what it does not
+
+- **Proves:** if the lattice and the laboratory realise isomorphic empirical
+  models, they agree on $S$ and on the shape of $E(\theta)$.
+- **Does not prove:** that either one violates.  Establishing that the lattice
+  model is contextual (§10.3) and capped at Tsirelson (§10.4, §10.6) is the
+  open work; the interface argument is silent on it.
+- **What it buys:** *there is no dial.*  If the lattice yields $2$ and the
+  laboratory sees $2.4$, no constant can be tuned to reconcile them.  The
+  interface removes the escape route, which is what makes the channel a real
+  risk rather than a postdiction.
+
+#### 11.5 Why this matters against the derive-or-fit gate
+
+Open handoff `2026-07-16-dpmin-derived-or-fitted-gate` holds the
+dimensional-selection claim precisely because $\delta p_\min = 1/4$ may have
+been fitted.  The Bell channel has no such exposure: **there is no constant to
+fit.**  This is the programme's one prediction immune to the fitting objection
+by construction, and the contrast is worth stating explicitly wherever the two
+appear together.
+
+#### 11.6 Functoriality as a physical constraint
+
+Do not discard functoriality -- it has content.  Preserving composition says
+
+> evolving on the lattice and then calibrating equals calibrating and then
+> running the corresponding physical procedures,
+
+i.e. **calibration commutes with dynamics.**  That can fail: a scale-dependent
+calibration, or a floor whose action does not commute with the continuum limit
+([[discrete_to_continuum_limits]]), would break it.  It is a constraint to
+check, not a formality.
+
+The calibration should be neither **full** nor **faithful**.  Not faithful is
+correct and desirable -- many lattice configurations map to one experiment.
+Full would claim every physical experiment arises from a lattice configuration,
+which is far stronger than anything needed here.
+
+#### 11.7 Notation
+
+Avoid $\mathcal{L}$ for the substrate.  In category theory and order theory a
+*lattice* is a poset with meets and joins, and the successor-geometry work uses
+the **face lattice** of the simplex in that sense.  Use $\mathcal{D}$ for the
+discrete causal structure.
+
 ---
 
 ## Conclusions
@@ -398,6 +517,14 @@ the code; it is never evidence about the world.  See
    selections)? This is a code-level fact that decides whether §9's
    entangling-nonlinearity thesis can coexist with §8's non-signalling
    requirement.
+8. **Construct the calibration explicitly (added 2026-07-26).** §11 assumes the
+   isomorphism $E_{\mathcal{D}} \cong E_{\mathcal{P}}$ rather than establishing
+   it. Two things are owed: (a) build the context category
+   $\mathrm{Ctx}(\mathcal{D})$ and the empirical model on it from the lattice's
+   own measurement primitives; (b) check that the calibration is assembled
+   **only from observer-accessible quantities** (§10.7) -- a calibration that
+   needs amplitudes read off an array is a God-eye object and cannot be the
+   interface. Then verify functoriality (§11.6) rather than assuming it.
 
 ---
 
@@ -425,4 +552,6 @@ the code; it is never evidence about the world.  See
   Abramsky, Barbosa, Kishida, Lal, Mansfield (cohomological obstructions to
   contextuality); Gisin (1990, nonlinear quantum mechanics permits superluminal
   signalling); Renou et al. (2021, real versus complex quantum theory needs a
-  network Bell test).
+  network Bell test). *Added for §11:* Lawvere (functorial semantics -- a theory
+  is a category, a model is a functor out of it; the categorical form of
+  "interface and implementations").

@@ -299,6 +299,22 @@ internal-reference tag.
   (emergent dimension) and $D_d$/$A_d$/cross-polytope theory (the
   geometry); claims novelty narrowly on the unified construction + the
   $\delta p_\min$ mechanism.  Citations hardened by a `deep-research` run.
+- `notes/dcl_core_handoff_queue.md` -- **staging list, not a handoff**
+  (opened 2026-07-30).  Accumulates what `dcl-core` will need when coding on
+  the successor architecture begins: decisions, the code-level forks
+  (floor-as-admissibility vs clamp; coherent vs incoherent selection; gauge vs
+  physical facet index), test implementation order, the instrumentation spec,
+  the God-eye discipline, and questions *for* dcl-core.  **Do not file until
+  the author asks**; then use the `/handoff` skill.
+- `notes/successor_geometries_simplex_face_lattice.md` -- successor-geometry
+  thread (2026-07-29) after Paper IV's single-domain no-go: the coexisting
+  structures are the **faces of the simplex** (counts $\binom{d+1}{k}$,
+  coordination $2k$, complete at $2^{d+1}-1$); isotropy only at $k=d+1$,
+  chirality only at $k=d$; the facets are related by *proper* rotations so
+  averaging restores isotropy without losing handedness; four electron filters
+  select the coherent four-facet superposition; confinement-as-the-no-go
+  conjecture; the selection alphabet fixes $\delta p_\min$.  Carries the
+  **T1-T12 test plan** and the architecture **results table** (A0-A4).
 - `notes/platos_cave_invariant_observer.md` -- philosophy / framing
   thread (2026-07-25): the ontology behind A=1 as Plato's cave with the
   chains rewritten as *invariance*; topos-theoretic translation (sieve
