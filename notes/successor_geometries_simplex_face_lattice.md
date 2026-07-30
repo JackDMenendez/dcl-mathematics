@@ -472,6 +472,60 @@ remainder.  So the arithmetic of the quantum independently prefers the facet
 decomposition -- a third route to A2, alongside isotropy (§3.3) and the electron
 filters (§4).
 
+### 6.2 Normalisation, and a guard against unit-sphere numerology (added 2026-07-30)
+
+**A=1 is the unit-*measure* convention.**  It declares total probability to be
+one, which is the sphere whose surface has measure one -- not the sphere whose
+radius is one.  This is not an alternative the programme might adopt; it is the
+convention the programme is already in.
+
+**One cannot remove $\pi$, only relocate it.**  Fix radius $=1$ and $\pi$
+appears in the area, $4\pi$.  Fix measure $=1$ and $\sqrt\pi$ appears in the
+radius, $1/(2\sqrt\pi) \approx 0.282$.  Normalisation is precisely a decision
+about which quantity gets to be clean and which absorbs the constant -- the same
+shape as every other choice-of-sameness in these notes, with a cost worth
+knowing one is paying.
+
+*(The dimensional caveat of §3.9 still applies: setting the measure to one
+produces **no length**.  The number $0.282$ is expressed in whatever units the
+picture was drawn in, not a physical scale.)*
+
+**The guard.**  Unit-**radius** quantities have famously strong
+dimension-dependence.  The volume of the unit ball runs
+$2,\ 3.14,\ 4.19,\ 4.93,\ \mathbf{5.26},\ 5.17,\ 4.72,\ \ldots$ -- **peaking at
+$d = 5$** and then falling to zero.  The surface area of the unit sphere peaks
+at **$d = 7$**.  Both are real and striking, and they are very likely the source
+of the folklore that "five or six dimensions is special."
+
+**They are also artefacts of the convention.**  Those peaks exist *only because
+the radius was fixed to one*.  Renormalise -- fix the measure instead, as A=1
+does -- and the special dimension moves or disappears.  By Observational
+Univariance ([[manifesto_two_transcendentals]]; [[platos_cave_invariant_observer]]
+§4.9), a dimension picked out by which quantity one declared to be unity is
+**not physical**.
+
+> Any dimension-selection argument built on unit-sphere volumes or areas fails
+> the univariance test.  The first question is always: *unit in what?*
+
+This guard is worth stating because the programme already has a
+dimensional-selection claim in play (§6, §6.1) and is therefore well positioned
+to make exactly this mistake.  It is seductive numerology, and it would
+discredit the surrounding work.
+
+**The lead that survives.**  If a dimension-dependent effect intrinsic to the
+unit-*measure* sphere is wanted, **concentration of measure** is the
+mathematically respectable candidate: on a sphere with normalised measure, as
+dimension grows almost all the measure concentrates near any equator, with
+exponentially sharp tails.  This is a statement about the probability measure
+itself, so it is invariant under renormalisation and passes the univariance test
+the volume peaks fail.
+
+Its physical content, if any: in high dimension a normalised distribution on the
+sphere becomes degenerate -- typical configurations grow indistinguishable.
+Should the programme ever want a mechanism disfavouring large $d$ that is *not*
+the counting argument, this is the one to examine.  **Solid as mathematics,
+entirely unexamined as physics.**
+
 ---
 
 ## 7. Test plan
