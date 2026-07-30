@@ -456,7 +456,54 @@ standard, achievable and testable, and is what T1/T13/T14 measure.  Both are
 respectable; conflating them is how the defensible version gets dismissed
 alongside the overreach.
 
-**The constructive reading of the same ellipsoid.**  Deformation aside, an
+**Two known derivation routes, and where they say to dig.**  If the goal is a
+*new derivation* of relativity, the existing ones locate the work.
+
+*Ignatowsky (1911); Frank and Rothe (1911) -- relativity without the light
+postulate.*  Assume only the relativity principle, homogeneity of space and
+time, isotropy, and that the transformations form a **group**: Lorentz follows,
+with the invariant speed appearing as a free parameter that experiment fixes
+(infinite recovers Galileo).  A scheme supplying those four therefore
+*re-derives* rather than derives -- which identifies exactly what must be earned
+here.  Homogeneity is free on a lattice, isotropy is T1, the relativity
+principle is a stance; **group closure** is the one not given.  And it is cheap
+to test:
+
+> **The closure test.**  Compose two deformations of the family and ask whether
+> the result is another member of the same family.  If it **closes**, Ignatowsky
+> indicates Lorentz and the invariant speed drops out.  If it does **not**, the
+> scheme is an anisotropy model.  An afternoon's algebra, and it decides whether
+> the ellipsoid route is alive at all.
+
+*Zeeman (1964); Hawking--King--McCarthy and Malament -- causal order alone gives
+the group.*  Any bijection of Minkowski space preserving the causal order is a
+Lorentz transformation composed with a translation and a dilation; causal
+structure determines the metric up to a conformal factor, and the conformal
+factor is supplied by **volume**.  That is the causal-set slogan:
+
+> **Order + number = geometry.**
+
+This framework has **both, in exact form**: adjacency supplies the order,
+integer counting supplies the number (§3.7;
+[[platos_cave_invariant_observer]] §5.1).  That is the derivation shape the
+substrate is actually built for, and it is rigorous rather than aspirational.
+**The ellipsoid is a picture of the result; the causal order is the source.**
+
+**The actual open problem.**  Causal sets obtain Lorentz invariance because the
+sprinkling is **random** -- a Poisson process has no preferred direction.  A
+regular lattice's causal order picks a frame.  So "order plus number equals
+geometry" runs cleanly for a sprinkling, and what a *regular* substrate must
+confront is:
+
+> **Can a regular causal order, plus exact counting, yield Lorentz invariance
+> without randomness?**
+
+If A2's four-facet averaging does what sprinkling does, that is the mechanism.
+If it does not, the obstruction is now stated precisely enough to work on.
+Either way this is a sharper question than the ellipsoid, and it is the
+genuinely novel one available.
+
+**A different reading of the same ellipsoid.**  Deformation aside, an
 ellipsoid encoding momentum is a **second velocity moment** -- the stress
 tensor.  Isotropic for a Maxwellian in local equilibrium; ellipsoidal under flow
 or shear.  That object is the closure variable on the road from kinetic theory
@@ -770,6 +817,19 @@ and adoption is provisional on T9 and Tier 3.
 6. **Audit rows.**  This repo's two inherited PASS rows (bipartite octahedral
    lattice at $d=3$; the 71-dimensional per-site algebra) descend from the
    construction Paper IV excluded and need re-statement.
+7. **Can a regular causal order plus exact counting give Lorentz invariance
+   without randomness?** (§3.10.)  Zeeman and Hawking--Malament give the group
+   from causal order alone, and "order plus number equals geometry" is the
+   causal-set route -- but causal sets buy Lorentz invariance with *random*
+   sprinkling, whereas a regular lattice's order picks a frame.  This framework
+   has the order and the counting in exact form and is regular.  Whether A2's
+   four-facet averaging can stand in for randomness is **the sharpest open
+   question in this note**, and is upstream of T1 rather than a consequence
+   of it.
+8. **Does the momentum-deformation family close under composition?** (§3.10,
+   the closure test.)  Cheap, decisive, and it determines whether the ellipsoid
+   is a route to relativity or an anisotropy model.  Do this before any further
+   work on the ellipsoid.
 
 ---
 
