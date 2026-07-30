@@ -332,6 +332,34 @@ strictly stronger than quoting a number at a guessed scale.  It also fits the
 programme's falsifiability posture better: "here is what the data says about the
 spacing" beats "here is what happens if the spacing is Planckian."
 
+**Which circle constant is inside your constants?**  The reduced Planck
+constant is $h/2\pi$, and that $2\pi$ is **not physics** -- it is the conversion
+between *counting turns* and *measuring arc*: energy is $h$ times frequency in
+**cycles**, or $\hbar$ times angular frequency in **radians**.  It is the
+circumference of the unit circle, present only because radians were chosen.  By
+§3.8 it therefore has no lattice counterpart: on a substrate where phase
+advances in discrete steps, the analogue of one full turn is **the phase clock's
+period in ticks -- an integer** (see [[phase_clock_and_bipartite_parity]]).
+
+Two consequences:
+
+- **A wrong $2\pi$ cannot be hidden.**  Factors of $2\pi$ are dimensionless,
+  hence calibration-invariant ([[bell_chsh_separability_on_lattice]] §11), so
+  they cannot be absorbed into the spacing.  A mis-set circle constant shows up
+  as a genuine numerical discrepancy against experiment.  That puts $2\pi$
+  factors in the small set of **no-dial quantities** -- a real test rather than
+  bookkeeping, and one of the few things this framework can get *observably*
+  wrong.
+- **"The Planck length" is itself convention-dependent.**  The *reduced* Planck
+  length, built from the reduced Planck mass with its $8\pi$, is
+  $\sqrt{8\pi} \approx 5$ times the ordinary one.  So "calibrate to the Planck
+  length" is under-specified by a factor of five before anything else happens --
+  and the ambiguity is a factor involving $\pi$, arriving silently inside a
+  constant.  This is the section's argument by example rather than by principle.
+
+**Discipline:** for every constant used in matching, record which
+circle-constant convention it carries.  Folded into T14.
+
 Operationalised as **T14** below.
 
 ---
@@ -406,6 +434,43 @@ $d$ and therefore selects nothing.  That is the *fitted* branch of open handoff
 `2026-07-16-dpmin-derived-or-fitted-gate`, arriving from the geometry side.
 The geometry programme is unaffected; only the dimensional-selection novelty
 claim is.
+
+### 6.1 Three readings of the quarter (added 2026-07-30)
+
+Before asking whether $\delta p_\min = 1/4$ is *derived or fitted*, it is worth
+asking **what the number means**, because at least three different physical
+claims currently wear it:
+
+| Reading | The quarter is | Consequence for $d_{\max} = 1/\delta p_\min - 1$ |
+|---|---|---|
+| **Facet share** | one of the $d+1$ facets (§6) | $= (d+1) - 1 = d$ **identically** -- a tautology, true for every $d$, selecting nothing |
+| **Quarter turn** *(speculative)* | one tick of a phase clock of period 4 (§3.9, [[phase_clock_and_bipartite_parity]]) | the quantity is about **phase**, not space; any link to dimension would have to be established, not assumed |
+| **Probability floor** | the minimum resolvable probability | the occupancy constraint bites -- with four indivisible units, at most **four sites can be occupied at once**, which looks far too coarse for a wavefunction (see below) |
+
+**Why this matters for the gate.**  Two of the three readings make the
+derive-or-fit question *moot*: under "facet share" the relation is definitional
+regardless of how the quarter was arrived at, and under "quarter turn" it is not
+a statement about dimension at all.  Only the third reading leaves
+dimensional selection standing as an independent claim -- and that reading
+carries its own difficulty.
+
+**The occupancy arithmetic.**  If A=1 normalises a session and the quarter is a
+probability quantum on that normalisation, there are four indivisible units, so
+a session occupies **at most four sites**.  Six equal nonzero shares over the
+six nearest neighbours would need at least six units, so uniform occupancy of
+the neighbour shell is not improbable but *arithmetically unavailable*, and
+single-tick propagation cannot be isotropic -- isotropy must be recovered by
+interference or averaging (bearing directly on **T9**).  Four sites is a
+tetrahedron, not a wavefunction, which suggests either that the practical
+quantum is very much smaller than $1/4$, or that the quarter is **not** a
+spatial-occupancy quantum.  This is a question the code can answer immediately
+and is queued for `dcl-core`.
+
+**A note in A2's favour.**  Four units spread over six neighbours cannot be
+uniform; four units over **four facets** is exactly uniform, one each, with no
+remainder.  So the arithmetic of the quantum independently prefers the facet
+decomposition -- a third route to A2, alongside isotropy (§3.3) and the electron
+filters (§4).
 
 ---
 

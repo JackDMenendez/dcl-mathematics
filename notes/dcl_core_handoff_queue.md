@@ -189,6 +189,20 @@ framework's own terms.
   nothing.  That is the gate's *fitted* branch arriving from the geometry side.
   Source: [[successor_geometries_simplex_face_lattice]] §6.  **This should
   probably be routed to `dcl-delta-p-min` as well as `dcl-core`.**
+  *(Routed 2026-07-29 via PM as `2026-07-29-dpmin-geometric-fitted-branch-input`.)*
+- **FOLLOW-UP to that gate, not yet routed (2026-07-30):**
+  [[successor_geometries_simplex_face_lattice]] §6.1 now identifies **three
+  different physical claims wearing the number 1/4** -- a facet share, a quarter
+  turn of the phase clock, or a probability floor.  **Two of the three make the
+  derive-or-fit question moot**, so "what does the quarter mean?" may be more
+  decisive than "was it derived?".  This reframes what `dcl-delta-p-min` is
+  being asked and probably warrants a follow-up routing while the gate is still
+  open.
+- **QUESTION FOR `dcl-core`, answerable immediately (§6.1):** if A=1 normalises
+  a session and 1/4 is a probability quantum on that normalisation, a session
+  occupies **at most four sites** and cannot spread uniformly over six
+  neighbours.  Is that what the code does?  If not, the quarter is not a
+  spatial-occupancy quantum and its scope needs stating.
 - **Paper IV v1.0** (`dcl-paper-04-optical-axis-birefringence`, Zenodo
   `10.5281/zenodo.21435951`) -- the single-domain no-go this whole thread
   responds to.  Papers I and II re-versioned to v2.0.
