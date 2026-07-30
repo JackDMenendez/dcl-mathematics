@@ -396,6 +396,88 @@ circle-constant convention it carries.  Folded into T14.
 
 Operationalised as **T14** below.
 
+### 3.10 The momentum ellipsoid: what it can and cannot give (added 2026-07-30)
+
+*Thread: a unit-measure probability shape that deforms into an ellipsoid along
+its momentum direction, keeping surface measure one.*
+
+**What comes free.**  A normalised density under a boost really does contract
+along the direction of motion while total measure stays one and the density
+rises correspondingly.  Length contraction with probability conservation is
+exactly that picture, so the intuition is consistent with special relativity as
+far as it goes.
+
+**Three things stand between it and special relativity.**
+
+1. **The group is the content.**  Any deformation rule produces *some*
+   momentum-dependent shape.  Special relativity requires the eccentricity be
+   exactly $\gamma$ and -- harder -- that boosts **compose**: velocity addition,
+   and the Thomas--Wigner rotation obtained from composing non-collinear boosts.
+   A shape rule that does not close into $SO(1,3)$ is an anisotropy, not
+   relativity.  Getting the contraction does not imply getting the group.
+2. **A measure cannot give a signature.**  A probability measure is
+   **positive-definite**; the Minkowski form is **indefinite**.  One cannot
+   obtain an indefinite quadratic form by normalising a positive one, and the
+   light cone *is* the signature.  So the cone must come from elsewhere -- and
+   there is an obvious elsewhere: the **causal structure**.  That is the
+   "causal" in *discrete causal lattice*, and a causal order is precisely where
+   a cone lives naturally.  **Look for relativistic structure in the adjacency
+   ordering, not in the normalisation.**
+3. **Regular lattices are in tension with exact Lorentz invariance.**  A regular
+   lattice picks out a frame -- its own -- and boosts do not map it to itself.
+   The known route to genuine Lorentz invariance from discreteness is to make
+   the discreteness **random** rather than regular: causal-set Poisson
+   sprinkling is manifestly Lorentz invariant because a Poisson process has no
+   preferred direction.  This substrate is regular, so *exact* relativity is off
+   the table by that argument.  What remains available is **emergent,
+   approximate** invariance with violations suppressed at higher order.
+
+**And there is already data.**  Paper IV excluded A0 on precisely
+Lorentz-violation grounds: a marginal CPT-even $k_F$ coefficient at order unity
+and dimension four, killed by cavity and Michelson--Morley isotropy bounds.  For
+the old architecture, "the framework reproduces special relativity" is not an
+open question but a **published negative**.
+
+> **T1 is the special-relativity test.**  Sector agreement means all sectors
+> share one light cone, which is effective Lorentz invariance at leading order.
+> **T13 is the same question at the next order.**
+
+No new line of work is needed here -- only running the test already written, and
+recognising the standard it is judged against.  A2's four-facet averaging is
+plausibly what buys it, since averaging over orientations is a way of not
+picking a direction; but it restores **cubic** symmetry, not full rotational
+symmetry, so it delivers isotropy at order $k^2$ with residuals beyond.
+Approximate, not exact.
+
+**State which claim is being made.**  *Exact* Lorentz symmetry in the substrate
+is very hard for a regular lattice and would require something standing in for
+the randomness.  *Emergent* Lorentz invariance with suppressed violations is
+standard, achievable and testable, and is what T1/T13/T14 measure.  Both are
+respectable; conflating them is how the defensible version gets dismissed
+alongside the overreach.
+
+**The constructive reading of the same ellipsoid.**  Deformation aside, an
+ellipsoid encoding momentum is a **second velocity moment** -- the stress
+tensor.  Isotropic for a Maxwellian in local equilibrium; ellipsoidal under flow
+or shear.  That object is the closure variable on the road from kinetic theory
+to fluids, and it has a named home in anisotropic-Gaussian closures (ES-BGK
+being the standard example).  Three notes on it:
+
+- **T1's machinery may transfer directly** -- the propagation tensor and the
+  stress tensor are both symmetric positive-definite second moments.
+- **The §3.6 guard reproduces known physics**: an absolute, universal isotropic
+  stress carries no observable content; only differences are physical.  That is
+  exactly true in continuum mechanics, where motion comes from gradients and the
+  deviatoric part.  A guard derived for this framework recovering a standard
+  fact unprompted is worth banking.
+- **This is Hilbert-sixth territory** ([[discrete_to_continuum_limits]]), but the
+  hard part there is *analysis* -- rigorous limits, propagation of chaos, and
+  above all long times -- not the closure ansatz.  The field moved substantially
+  and recently; check the current state before writing anything.  The defensible
+  claim available today is the small one: **the momentum ellipsoid is a
+  second-moment closure object, and the isotropy machinery applies to it.**
+  Hilbert-sixth stays a STUB row.
+
 ---
 
 ## 4. What an electron must be
