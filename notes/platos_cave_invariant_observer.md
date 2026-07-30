@@ -310,6 +310,57 @@ The operational form of all this is
 [[successor_geometries_simplex_face_lattice]] §3.6 -- absolute isotropy is not
 the test; **sector agreement** is.
 
+### 4.10 When are two things the same?  Set versus groupoid (added 2026-07-30)
+
+*"Two is equal to two" and "two is not equal to two" can both be true
+statements, depending on the circumstances of each.*  This is not a paradox and
+not a loosening of equality.  The two statements are true **of different
+structures**, and the circumstance that decides between them is whether you have
+**quotiented**.
+
+- **In a set** there is one object named two, so two equals two.  Trivially.
+- **In a groupoid** the two here and the two there are **isomorphic, not
+  equal** -- and there may be *several* isomorphisms between them.  Which one
+  was used is real information, and passing to the quotient set is precisely
+  the act that discards it.
+
+Where §4.9 says which *differences* are observable, this says which
+*identifications* are available.  Both are the same underlying move: sameness is
+not discovered, it follows from the representation freedom one admits, which is
+Observational Univariance again (see [[manifesto_two_transcendentals]]).
+
+**Equal as counts, distinct as objects.**  Two collections of size two are
+equinumerous and not equal; cardinality is not identity.  The integer tables of
+§5.1 record cardinalities, while the physics may care about identities -- so a
+bare integer is never the whole quantity.  Practically: a count must carry its
+index (which sector, which facet, which parity) or the first interesting
+comparison will be between incomparables.
+
+**Where it stops being philosophy.**  Whether the units of a partition are
+individuated is exactly the identical-particle question, and the exchange sign
+is the residue the quotient cannot quite remove -- the same $Z_2$ as the spinor
+double cover ([[successor_geometries_simplex_face_lattice]] §3.5).  See §5.1's
+statistics caveat.
+
+**And it is Open Question 2 of the successor note in its purest form.**  If two
+facets each carry weight two and one declares them the same, one has quotiented
+away *which facet* -- that is gauge.  Keep them distinct-but-isomorphic and the
+facet index is physical.  No geometry, no dynamics: just two twos and whether
+there is a fact about which is which.
+
+**This bites first in Lean.**  Formalising the lattice forces a choice between
+`Eq` and a quotient type: is a facet-relabelled configuration *equal*, or merely
+isomorphic?  The type checker will not permit the question to be deferred, and
+will catch any later use of the other convention.  That is a concrete argument
+for starting the formalisation sooner -- it converts a question the physics has
+been postponing into one the compiler asks immediately.
+
+**Guard.**  None of this makes equality negotiable.  There are several
+*distinct, well-defined* relations -- definitional equality, propositional
+equality (with possibly many proofs), equivalence -- and the discipline is to
+**name which one is meant**.  "Depending on the circumstances" is an obligation,
+not a licence.
+
 ---
 
 ## 5. Only discreteness is visible
@@ -384,6 +435,29 @@ $N$, there are $N$ indivisible units to distribute, and the sieve emits a
 have no zero parts -- not by convention but by definition; a part of size zero
 is not a part.  Zero's absence is therefore a property of the object the
 formalism produces, not a prohibition imposed on it.
+
+**Caveat: the partition does not settle particle statistics** *(added
+2026-07-30).*  Partitions treat their units as **indistinguishable** -- stars
+and bars -- and that is Bose--Einstein counting, sitting visibly in the
+formalism.  The counting rule genuinely does encode a statistics whenever the
+units are the physical quanta:
+
+| Units | Ways to place $N$ units in $k$ boxes | Statistics |
+|---|---|---|
+| distinguishable | $k^N$ | Maxwell--Boltzmann |
+| indistinguishable | $\binom{N+k-1}{k-1}$ (stars and bars) | Bose--Einstein |
+| indistinguishable, at most one per box | $\binom{k}{N}$ | Fermi--Dirac |
+
+**Here they are not**, and the partition must not be read as a choice of
+statistics.  The partition is a statement about *probability weights*; the
+exchange sign lives in the **amplitude** layer, alongside the chirality and the
+phase's double cover (§4.10, and
+[[successor_geometries_simplex_face_lattice]] §3.5).  Fermionic antisymmetry is
+an amplitude fact, not a count fact.
+
+The trap is worth naming because the target particle is the **electron**:
+stars and bars is right there in the notation, and it is the wrong statistics
+for the case the framework most needs.  See Open Question 8.
 
 **A=1 forbids the empty set -- globally.**  A partition of $N \ge 1$ always has
 at least one part, so the admissible set is never empty.  Two statements must
@@ -597,6 +671,13 @@ The diagram is not evidence, but the arrows are drawn correctly.
    rendering and the mathematics available to an observer inside it.  §5's
    representable/non-representable distinction is the nearest thing already
    written down.
+8. **Does the amplitude layer actually deliver fermionic antisymmetry?**
+   (§5.1 caveat, §4.10.)  The partition structure is Bose--Einstein counting and
+   is explicitly *not* the statistics; the exchange sign is asserted to live in
+   the amplitude layer alongside chirality and the double cover.  That has been
+   argued, not shown.  Until it is, the framework has an electron whose
+   antisymmetry is unaccounted for -- and the counting notation actively invites
+   the wrong reading.
 
 ---
 

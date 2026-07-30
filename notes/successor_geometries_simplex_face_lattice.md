@@ -199,6 +199,141 @@ calibration cannot round the ball.  Combined with §3.6: the shape is not
 something units can change *and* not something an observer can detect, and the
 residual physical content is exactly the sector difference.
 
+### 3.8 The circle constant, and what it illustrates
+
+**Do not publish this section's headline.  See the caution at the end.**
+
+In taxicab geometry the unit circle is the diamond $|x| + |y| = 1$; each side
+runs from $(1,0)$ to $(0,1)$ with taxicab length 2, so the circumference is 8
+and the diameter 2:
+
+> $\pi_{\text{taxicab}} = 4$, exactly -- a rational integer, with no
+> transcendence anywhere.
+
+**On this lattice the counts are exact.**  The current architecture is
+combinatorially the integer lattice in three dimensions with six neighbours, so
+
+- sites at hop-distance $n$: $\;4n^2 + 2$
+- sites within hop-distance $n$: $\;(4n^3 + 6n^2 + 8n + 3)/3$
+
+($n=1$ gives 6 and 7; $n=2$ gives 18 and 25.)  Closed form, integer-valued, and
+the discrete counterparts of $4\pi r^2$ and $\tfrac43\pi r^3$ -- with a
+coefficient of 4 where Euclid has $4\pi$.  Substrate geometry is **arithmetic,
+not analysis**, which makes lattice-point counting, quadratic forms and theta
+series of lattices available as tools (relevant to the $D_d$ / $A_d$ families of
+[[prior_work_dimension_from_adjacency]]).
+
+**Skew does not change it.**  A basis change transports metric and ball
+together, so the facet architectures give 4 as well; so does $\ell^\infty$.  The
+circle constant is therefore the *same across the whole results table* -- a
+shared structural fact, not a discriminator, and not a test.
+
+**Euclid minimises it.**  The circle constant $\pi_p$ of the $\ell^p$ norm
+satisfies $\pi_1 = \pi_\infty = 4$ and is **minimised at $p = 2$**, where it
+equals $\pi$.  That is a second, independent characterisation of the Hilbert
+exponent, alongside the one already load-bearing here (A=1 presupposes
+normalisation, hence an inner product).  Two unrelated routes distinguishing the
+same exponent is worth noting, though neither is yet a derivation.
+
+**Which value is physical?  Observational Univariance decides.**  The value 4 is
+a property of the hop metric -- the unit ball's shape, shared by every sector.
+By §3.6 a structure shared by everything is undetectable from inside; by
+Observational Univariance it is not univariant.  So it sits in what
+[[manifesto_two_transcendentals]] calls the **gauge fibre**: real in the
+God's-eye representation, absent from the univariant quotient.  The value
+$3.14159\ldots$ is what a wave-based measurement returns, because physical
+distance is read off dispersion -- the $\ell^2$ level (§3.7), which is all an
+internal observer has.
+
+> The tidy integer is the part you cannot measure; the transcendental value is
+> the observable one.
+
+This is an unusually concrete instance of the manifesto's claim that the
+God's-eye view carries more than the observables: the surplus includes the
+entire shape of the unit ball, and with it the circle constant.
+
+**A discovery instrument.**  If the substrate has no $\pi$, then $\pi$ is
+*produced* by the long-wavelength limit.  So compute the **effective circle
+constant as a function of wavelength** and watch it flow from 4 at hop scale to
+$3.14159\ldots$ at long wavelength.  The rate of that flow is set by the leading
+anisotropic term -- i.e. this is **T13 made visual**.  The phenomenon is
+standard (restoration of rotational symmetry in the continuum limit is routine
+lattice-field-theory practice), so the measurement technique already exists.
+
+**Two cautions.**
+
+- *Pin the definition before quoting a number.*  Measured as **arc length**
+  around the boundary the constant is 4; measured as a **count of sites** at
+  radius $n$ it is the 4 in $4n^2+2$ -- related, arrived at differently, and
+  other reasonable definitions give other constants.  Since this framework
+  insists every observation is a count, the site-count version is the more
+  native one and should be the one that gets a name.
+- *Naming collision.*  [[manifesto_two_transcendentals]] uses "transcendental"
+  in the **Kantian** sense (principles above any particular claim: A=1 and
+  Observational Univariance).  $\pi$ is transcendental in the **number-theoretic**
+  sense.  Same word, unrelated meanings, both notes in `notes/`.  Any writing
+  that touches both owes a sentence keeping them apart.
+
+**Publication caution.**  "$\pi = 4$ on the lattice" is the most quotable line
+in this thread and must not leave the repo.  To a lattice practitioner the
+observation is unremarkable -- taxicab $\pi = 4$ is a textbook curiosity and
+hypercubic artefacts vanishing in the continuum limit is routine -- while to
+everyone else it reads as crankery.  The framework-specific content is narrow
+and much less quotable: the circle constant sits in the gauge fibre.  Treat this
+like the §5 conjecture.
+
+### 3.9 Calibration discipline: do not fix the spacing to the Planck length
+
+**Calibration is an identification**, and by
+[[platos_cave_invariant_observer]] §4.10 an identification is a quotient that
+discards information.  Saying "one hop equals one Planck length" asserts that
+*this* two (hops) is *that* two (lengths).  The question is always what was
+discarded and whether it mattered.
+
+Here what is smuggled is larger than a unit.  **The Planck length has never been
+measured** -- it is a dimensional combination of $\hbar$, $G$ and $c$, not an
+observed scale.  Fixing the lattice spacing to it asserts that the
+quantum-gravity scale *is* the discreteness scale: a substantive physical
+hypothesis in the costume of a unit convention.  Nothing in this framework
+requires it, and condensed matter is full of continuum descriptions emerging
+many orders above the lattice constant.
+
+**The operational test is to vary the spacing and see what moves.**  By
+[[bell_chsh_separability_on_lattice]] §11 a dimensionless prediction *cannot*
+depend on calibration, so anything that shifts is by construction not
+calibration-invariant.
+
+**And there is a sharp asymmetry worth keeping explicit:**
+
+- **Dimension-four effects are spacing-independent.**  They cannot be hidden by
+  shrinking the lattice -- which is exactly why Paper IV's exclusion was
+  decisive: the induced photon's common-mode anisotropy is order-unity and
+  dimension-four, so no choice of spacing rescues it.
+- **Higher-dimension effects scale with powers of the spacing**, and can be
+  pushed under any bound by making it small enough.
+
+So the "matter is safe because it is dimension-six" reasoning was only true
+**given** a Planckian spacing: the safety was a calibration choice, not a
+result.  (It was overturned for a different reason -- the observable kinetic
+structure is order-unity, hence spacing-independent -- but the lesson lands
+twice.)  A live instance remains in the published record: the $\omega = 0$
+amplitude filter accumulates **linearly in the spacing**, and its e-folding
+times are quoted at a Planckian value.
+
+**One reassurance:** $\delta p_\min$ is dimensionless, so the
+dimensional-selection relation does not inherit any of this.  Whatever else is
+in doubt there, it is not calibration.
+
+**The constructive move -- invert it.**  Do not calibrate to the Planck length;
+**let experiment calibrate the spacing.**  Every spacing-dependent effect then
+becomes a bound: *this effect is not observed at level X, therefore the spacing
+is below Y.*  That converts an assumption into an empirical handle, and is
+strictly stronger than quoting a number at a guessed scale.  It also fits the
+programme's falsifiability posture better: "here is what the data says about the
+spacing" beats "here is what happens if the spacing is Planckian."
+
+Operationalised as **T14** below.
+
 ---
 
 ## 4. What an electron must be
@@ -308,7 +443,8 @@ run).
 | **T10** | Gisin safety | is the floor implemented as **admissibility** (idempotent selection) or as a **clamp** (nonlinear map)? | admissibility | nonlinear dynamics generically signals; see [[bell_chsh_separability_on_lattice]] §10.5-10.6 |
 | **T11** | Bell | does the empirical model lack a global section, and does $S$ cap at $2\sqrt2$? | contextual **and** capped | under 2 $\Rightarrow$ Bell-local; over $2\sqrt2$ $\Rightarrow$ PR-box, unphysical ([[bell_chsh_separability_on_lattice]] §10.3-10.4) |
 | **T12** | Calibration functoriality | does calibration commute with dynamics? | yes | the interface argument of [[bell_chsh_separability_on_lattice]] §11.6 fails |
-| **T13** | Higher-order sector comparison *(added 2026-07-30)* | the leading anisotropic term **beyond** the quadratic (order $k^4$), again **per sector and compared** | sector difference at $O(k^4)$ below its (much weaker) bound | a differential cone shape survives beyond leading order.  Expected to pass -- the residual is Planck-suppressed, unlike Paper IV's $O(1)$ dimension-4 failure.  **Scored in the T1 cell** of the results table |
+| **T13** | Higher-order sector comparison *(added 2026-07-30)* | the leading anisotropic term **beyond** the quadratic (order $k^4$), again **per sector and compared** | sector difference at $O(k^4)$ below its (much weaker) bound | a differential cone shape survives beyond leading order.  Expected to pass -- the residual is suppressed, unlike Paper IV's $O(1)$ dimension-4 failure.  **Scored in the T1 cell** of the results table.  Visualisable as the effective-circle-constant flow (§3.8) |
+| **T14** | **Calibration-dependence audit** *(added 2026-07-30, §3.9)* | for **every reported quantity**: is it dimensionless (hence spacing-independent, [[bell_chsh_separability_on_lattice]] §11), or spacing-dependent — and with what scaling exponent? | every spacing-dependent quantity is reported as a **scaling law plus a bound**, never as a number at an assumed spacing | a result silently contingent on a calibration *choice*.  This is a **standing audit applied to every result**, not a one-off per architecture — so it has no column in the results table; it gates what may be written down at all.  Would have caught the "matter is safe because dimension-six" argument before it was made |
 
 **T9 first within Tier 3.** It is a single number and it collapses an entire
 axis of the architecture space: if incoherent averaging cannot reach
