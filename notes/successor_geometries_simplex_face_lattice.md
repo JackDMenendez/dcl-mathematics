@@ -104,19 +104,53 @@ Summing the four facet tensors: $4(4I) - \sum_i V_iV_i^T = 16I - 4I = 12I$ --
 isotropic exactly.  Isotropy and chirality would conflict only if the domains
 were related by reflections.  They are not.
 
-### 3.4 Colour and chirality are the same structure
+### 3.4 The ordering is the chirality -- and it may not be colour
 
 An *unordered* triad has no handedness -- the determinant's sign depends on the
-listing order.  Chirality is therefore extra structure laid on the geometry,
-and the framework already has it: the **RGB ordering** *is* an orientation
-assignment (see `figures/lattice_fig.txt`, where the colour letters sit on the
-bonds).
+listing order.  Chirality is therefore extra structure laid on the geometry, and
+the framework has it in the form of an **ordered labelling** of the axes (see
+`figures/lattice_fig.txt`, where the letters sit on the *bonds*, not the sites).
 
-> Preserving colour and preserving chirality are one act, not two.
+> The ordering is the orientation, and the orientation is the chirality.
 
-Paper IV's open question -- whether colour survives a successor geometry -- is
-therefore the same question as whether chirality does.  They stand or fall
-together.
+That much is solid.  **What is now in doubt is the identification of that
+ordering with colour** *(author, 2026-07-30)*: the RGB/CMB labels did not do
+what was expected, and a three-element index **is not SU(3)**.  A three-element
+set supplies at most permutations, or a basis on which a group could act; the
+continuous unitary structure has to come from somewhere else.  If it does not,
+the labels are an ordering and nothing more.
+
+**Naming recommendation.**  Keeping RGB is worse than neutral -- it asserts a
+QCD connection the structure may not support, and every use re-asserts it.  But
+the labels cannot simply be dropped, because deleting the ordering deletes the
+chirality.  So: **keep the structure, change the name.**
+
+- **Use symmetric labels: an axis index (1--4) and a sign.**  That is the entire
+  content -- four axes, two directions each, eight hops -- and it carries the
+  ordering explicitly where chirality lives, with no false implication.
+- **Avoid `s` and `d`.**  In any Standard-Model-adjacent context those are the
+  strange and down quarks, so they read as **flavour** indices -- a more
+  specific wrong implication than RGB's, which at least gestured at a triplet
+  index.  "Dark" carries its own freight.
+- **Do not name three-plus-one.**  Under A2 the fourth pair is *not* special:
+  all four facets are related by proper rotations (§3.3), which is the whole
+  reason averaging restores isotropy without losing handedness.  A
+  triad-plus-extra naming asserts an asymmetry A2 exists to remove -- a fossil
+  of A0, where the omitted axis genuinely *was* different.
+- **Reserve *shadow* and *dark* for the omitted axis** in A0-style discussion,
+  where the asymmetry is real and the omitted direction is exactly the one
+  nothing traverses.  Apt there, misleading elsewhere.
+- For the up/down split that the RGB-versus-CMB pairing was carrying, **parity**
+  or **orientation** is the honest word.  "Colour" was never right for a sign.
+
+**Consequences.**  Paper IV's open item asks whether *colour survives* a
+successor geometry.  If the labels were never SU(3), the question is not whether
+it survives but **whether it was ever there** -- a different and more awkward
+question, better asked deliberately than discovered later.  §5's conjecture
+depends on this identification (see there), and electron filter E3 is weakened
+(see §4).  **This is not a local rename**: Paper II's SU(3) claim is published
+and Papers I and II were re-versioned recently, so it is routed to the PM rather
+than settled here (queued in [[dcl_core_handoff_queue]]).
 
 ### 3.5 Spinors want the phase
 
@@ -373,7 +407,7 @@ filter.  Four requirements, each of which kills part of the space:
 |---|---|---|
 | E1 | Propagates freely | its configuration must be **isotropic** -- so not a single facet (§3.1) |
 | E2 | Is chiral (the R/L spinor field) | needs handedness -- so **facets must be in its makeup** (§3.2) |
-| E3 | Is colourless | cannot be *one* triad, since colour space **is** the triad (§3.4) |
+| E3 | Is colourless | cannot be *one* triad, *if* the triad carries a colour index at all -- **weakened 2026-07-30**, see §3.4 |
 | E4 | Is spin-$\tfrac12$ | needs the double cover -- the $Z_2$ sign in the phase (§3.5) |
 
 **What they select:** the electron is the **symmetric, orientation-carrying
@@ -385,6 +419,12 @@ This is the same architecture the isotropy argument forces (coherent
 superposition over the four triads, not an incoherent domain choice).  Two
 independent constraints selecting one scheme is the best evidence available at
 this stage.
+
+*(Robustness note, 2026-07-30: E3 is weakened by the colour doubt of §3.4, but
+the conclusion is not.  **E1 and E2 alone already select it** -- isotropy
+forbids a single facet, chirality requires facets in the makeup, and the only
+thing satisfying both is the symmetric combination.  Losing E3 costs an
+argument, not the answer.)*
 
 **Corollary:** a 1-face or 2-face has no determinant, so **it cannot be an
 electron.**  Whatever the lower faces are, they are chirality-free.  Whether
@@ -410,6 +450,13 @@ If it holds, Paper IV's negative result becomes a mechanism rather than only an
 obstacle.  **What would test it:** whether the isotropy requirement, applied as
 an admissibility condition, reproduces singlet-only free states for the right
 group-theoretic reason rather than by a coincidence of counting.
+
+**Weakened 2026-07-30.**  The conjecture's hook is that a single triad *is* a
+colour state and the symmetric combination is the singlet.  §3.4 now records
+that the colour identification is in doubt -- a three-element index is not
+SU(3).  If the triad was never colour, the hook is gone and the conjecture drops
+from suggestive to barely motivated.  It was already embargoed pending the check
+above; **this is a second, independent reason not to move it.**
 
 ---
 

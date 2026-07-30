@@ -206,6 +206,24 @@ framework's own terms.
 - **Paper IV v1.0** (`dcl-paper-04-optical-axis-birefringence`, Zenodo
   `10.5281/zenodo.21435951`) -- the single-domain no-go this whole thread
   responds to.  Papers I and II re-versioned to v2.0.
+- **COLOUR: upstream of Paper IV's open item, not downstream of it
+  (2026-07-30, NOT YET ROUTED -- PM decision needed).**  Author's recollection:
+  the RGB/CMB labels "did not do what was expected -- they were not SU(3)
+  colours."  A three-element index is not SU(3); it supplies permutations or a
+  basis, not the continuous unitary structure.  If that holds, Paper IV's open
+  question -- *does colour survive a successor geometry?* -- is the wrong
+  question.  The right one is **was it ever there?**  Consequences already
+  recorded in [[successor_geometries_simplex_face_lattice]]: §3.4 (the ordering
+  is still the chirality; the colour identification is not), §4 (electron filter
+  E3 weakened -- though E1 and E2 alone still select A2), §5 (the confinement
+  conjecture loses its main hook, a second reason for the embargo).
+  **This is not a local rename.**  Paper II's SU(3) claim is published and
+  Papers I and II were re-versioned only recently, so it touches three repos.
+  Naming recommendation if it proceeds: symmetric labels -- an **axis index
+  (1--4) plus a sign** -- not `s`/`d` (strange and down quarks), and not
+  three-plus-one (which asserts an asymmetry A2 exists to remove).  Reserve
+  *shadow* / *dark* for the omitted axis in A0-style discussion, where the
+  asymmetry is real.
 - **Referee major M6** on Paper IV (A=1 nonlinear-QM / signalling:
   Weinberg / Gisin / Polchinski) is **answered** by
   [[bell_chsh_separability_on_lattice]] §10.5--10.6.  Worth telling Paper IV's
