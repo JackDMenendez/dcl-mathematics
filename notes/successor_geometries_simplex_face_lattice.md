@@ -57,6 +57,13 @@ are its **faces**.  At $d = 3$ (axes $V_1 \ldots V_4$):
 Counts are $\binom{4}{k}$, so **the enumeration is complete**: $4+6+4+1 = 15 =
 2^4 - 1$ non-empty subsets.  There is no fifth family.
 
+**Completeness caveat (added 2026-07-31).**  That enumeration is complete
+*given that both signs are available at every site*.  Relaxing it -- letting the
+**sign be fixed by parity**, so a site may move only along $+V_i$ and its
+neighbours only along $-V_i$ -- yields a **second family** with coordination
+$d+1$ rather than $2k$, which is not among the fifteen.  At $d=3$ that is the
+tetrahedral **diamond lattice** (coordination 4).  See §3.11.
+
 - **Coordination is $2k$** for a $k$-subset.  Theorem 1's $\mathrm{coord}(d) =
   2d$ is the *facet* case, $k = d$.
 - **Everything is a sublattice of the top one.**  At $d=3$ the $k=4$ lattice is
@@ -503,6 +510,105 @@ If it does not, the obstruction is now stated precisely enough to work on.
 Either way this is a sharper question than the ellipsoid, and it is the
 genuinely novel one available.
 
+### 3.11 The cubic scaffold and the rhombic hop (added 2026-07-31)
+
+*Thread: the space is **cubic**, but travel through it is **rhombic** -- a hop
+takes one of several cubic routes, unknown, and simply arrives at one of four
+destinations.*
+
+**The precise version.**  A body-diagonal step is three cubic steps combined:
+to reach $(1,1,1)$ take $+e_1, +e_2, +e_3$ in some order, and there are
+$3! = 6$ orderings.  **The destination is determined; the route is not.**
+
+**"Four destinations" identifies the structure exactly: the diamond lattice.**
+From any site the tetrahedral neighbours are four of the eight body diagonals --
+$(1,1,1), (1,-1,-1), (-1,1,-1), (-1,-1,1)$ -- with the other four belonging to
+the opposite sublattice.  Coordination 4, bipartite, two interpenetrating FCC
+sublattices.  This makes the *diamond progression* name literal rather than
+analogical.
+
+**Why it is attractive.**  Which of the six routes was taken is a representation
+detail with no observable consequence; the destination is what survives.  So the
+cubic level is God's-eye and the rhombic level is the univariant quotient --
+**Observational Univariance appearing *in the geometry* rather than as a rule
+imposed on it.**  A which-path indeterminacy that is built in rather than added.
+
+**And isotropy comes for free.**  The four tetrahedral directions are the four
+simplex directions, so their outer products sum to $4I$ -- isotropic exactly, at
+second moment, **per site, with no averaging over facets required.**  A2 has to
+*construct* isotropy by coherent superposition over four domains; this has it
+structurally, for nothing.
+
+**Two costs.**
+
+- **Theorem 1 changes.**  Coordination is $d+1$, not $2d$ -- four at $d=3$, not
+  six.  Two genuinely different families: *$d$ of the $d+1$ directions with both
+  signs* (coordination $2d$, anisotropic) versus *all $d+1$ with sign fixed by
+  parity* (coordination $d+1$, isotropic).  Both bipartite; only the second is
+  isotropic, and it is not the one Theorem 1 describes (§2 completeness caveat).
+- **Chirality has to move.**  By §3.2 handedness needs exactly $d$ vectors -- a
+  determinant -- and four directions in three dimensions have none.  But the two
+  sublattices are related by **inversion**: if they are indistinguishable the
+  structure is centrosymmetric (diamond, achiral); if the parity is *physical*
+  and the sublattices differ, inversion is broken (**zincblende**,
+  non-centrosymmetric).  So handedness would live in **sublattice
+  distinguishability**, not in the direction set.  Concrete, checkable, and it
+  ties to [[phase_clock_and_bipartite_parity]].
+
+**The fork to settle first: are the cubic intermediate sites real, or is the
+cubic lattice bookkeeping?**
+
+- **Occupiable states** -- then they are not gauge, they are sites, the site
+  count roughly triples, the six routes are in principle distinguishable, and
+  the which-path indeterminacy that made the idea attractive is destroyed.
+- **Pure scaffold** -- never occupied, only a way of describing the diagonal
+  move.  Then the routes are genuinely gauge, the picture holds, and *"which
+  route" stops being a physical question at all*.  This must be committed to
+  explicitly, because a reader will assume the first.
+
+#### What the scaffold does to the circle constant
+
+**It is not a uniform conversion.**  One diamond hop along $(1,1,1)$ costs
+**three** cubic steps.  But *two* diamond hops reach $(0,2,2)$ -- take $v_1$ from
+an even site, then $-v_2$ from the odd one -- which is only **four** cubic steps,
+not six.  So the scaffold-to-hop length ratio runs between **3 and 2 by
+direction**: the two layers are **different geometries, not one geometry in
+different units**, and cannot be rescaled into each other.
+
+**And each layer has a *family* of circle constants, not a value.**  In a
+polytopal norm the constant is **plane-dependent**: the cubic ball is an
+octahedron, whose coordinate sections are diamonds (giving 4) and whose diagonal
+sections are hexagons (giving something else); the diamond lattice's two-hop
+structure is FCC, whose ball is a **cuboctahedron**, with its own spread.
+
+> A single circle constant is a **Euclidean privilege** -- it holds only because
+> every plane section of a sphere is a circle.
+
+So the **spread of $\pi$ across planes *is* the anisotropy**, expressed as a
+number.  That unifies §3.8 with §3.6: plane-dependence of the circle constant and
+non-sphericity of the unit ball are the same fact.
+
+**None of which is observable, and that is the point.**  By §3.8 the lattice
+circle constant already sits in the gauge fibre; measured $\pi$ comes from the
+$\ell^2$ dispersion relation.  The scaffold adds a *third* unobservable --
+cubic $\pi$, rhombic $\pi$, measured $\pi$ -- and only the last is in the
+univariant quotient.  That is the correct behaviour for something calling itself
+scaffold: if positing the cubic level changed a measured quantity, it would not
+be scaffold, it would be physics.
+
+**Which yields a test (T15).**
+
+> If the cubic level is genuinely gauge, **no dimensionless observable may depend
+> on it.**  Compute a dimensionless observable with the scaffold posited and
+> without; if they differ, **the scaffold is not scaffold**.
+
+That settles the fork above by calculation rather than declaration, and it
+generalises past $\pi$ to any dimensionless quantity -- the CHSH value,
+sector-agreement ratios, the effective circle-constant flow.  The moment one of
+them depends on the intermediates, the intermediates are states.
+
+---
+
 **A different reading of the same ellipsoid.**  Deformation aside, an
 ellipsoid encoding momentum is a **second velocity moment** -- the stress
 tensor.  Isotropic for a Maxwellian in local equilibrium; ellipsoidal under flow
@@ -740,6 +846,7 @@ run).
 | **T12** | Calibration functoriality | does calibration commute with dynamics? | yes | the interface argument of [[bell_chsh_separability_on_lattice]] §11.6 fails |
 | **T13** | Higher-order sector comparison *(added 2026-07-30)* | the leading anisotropic term **beyond** the quadratic (order $k^4$), again **per sector and compared** | sector difference at $O(k^4)$ below its (much weaker) bound | a differential cone shape survives beyond leading order.  Expected to pass -- the residual is suppressed, unlike Paper IV's $O(1)$ dimension-4 failure.  **Scored in the T1 cell** of the results table.  Visualisable as the effective-circle-constant flow (§3.8) |
 | **T14** | **Calibration-dependence audit** *(added 2026-07-30, §3.9)* | for **every reported quantity**: is it dimensionless (hence spacing-independent, [[bell_chsh_separability_on_lattice]] §11), or spacing-dependent — and with what scaling exponent? | every spacing-dependent quantity is reported as a **scaling law plus a bound**, never as a number at an assumed spacing | a result silently contingent on a calibration *choice*.  This is a **standing audit applied to every result**, not a one-off per architecture — so it has no column in the results table; it gates what may be written down at all.  Would have caught the "matter is safe because dimension-six" argument before it was made |
+| **T15** | **Scaffold invariance** *(added 2026-07-31, §3.11)* | a dimensionless observable computed **with** a posited sub-level (e.g. the cubic scaffold) and **without** it | the two agree exactly | the sub-level is **not** gauge — its intermediates are states, not bookkeeping.  Standing audit like T14, no results-table column; it decides an interpretive fork by calculation |
 
 **T9 first within Tier 3.** It is a single number and it collapses an entire
 axis of the architecture space: if incoherent averaging cannot reach
@@ -760,10 +867,21 @@ Rows are architectures; columns are tests.  Fill in as results land.
 | **A2** four facets, **coherent** *(favoured)* | PART -- $12I$ per sector, but **sector agreement not yet computed** | PASS | STUB | PASS (§3.3) | STUB | STUB | PASS $1/4$ | STUB | STUB | STUB | STUB | STUB |
 | **A3** full $k=4$ (BCC, coord 8) | STUB -- cube metric is **not** a failure (§3.6); sectors uncompared | **FAIL** (§3.2) | STUB | n/a | STUB | STUB | STUB | STUB | n/a | STUB | STUB | STUB |
 | **A4** all fifteen faces | STUB | PASS | STUB | STUB | STUB | STUB | **$1/15$** -- breaks the quarter (§6) | STUB | STUB | STUB | STUB | STUB |
+| **A6** diamond: all $d+1$, **sign by parity**, coord 4 *(§3.11)* | **PASS** -- $4I$ per site, **no averaging needed** | **FAIL** from the direction set -- but see §3.11 (sublattice distinguishability / zincblende) | STUB | n/a (no facet alphabet) | STUB | STUB | $1/4$ natively -- four destinations per site (§6.1) | STUB | **n/a** -- isotropy is structural, not averaged, so T9 does not arise | STUB | STUB | STUB |
 
 Reading of the table as it stands: **A0** is excluded (published).  **A3** loses
 handedness.  **A2** is the only row with no FAIL, and it is the row the electron
 filters of §4 independently select.  **A1** versus **A2** is decided by T9 alone.
+
+**A6 added 2026-07-31 (§3.11)** and it is not a face-lattice row -- it comes from
+the completeness caveat in §2, where the sign is fixed by parity rather than
+free at every site.  Two things distinguish it: **isotropy is structural rather
+than averaged**, so T9 does not arise at all; and the quarter appears *natively*
+as one of four destinations per site, which is a fourth route to
+$\delta p_\min = 1/4$ (§6.1).  Its cost is that Theorem 1's coordination $2d$
+becomes $d+1$, and chirality must come from sublattice distinguishability rather
+than from a determinant.  **If the chirality question resolves in its favour, A6
+dominates A2** -- it gets for free what A2 has to construct.
 
 *Note the T1 column was re-scored on 2026-07-30 under the corrected
 sector-relative criterion (§3.6).  Two cells moved from PASS to PART: computing
