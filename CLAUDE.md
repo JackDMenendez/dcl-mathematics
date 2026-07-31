@@ -299,6 +299,17 @@ internal-reference tag.
   (emergent dimension) and $D_d$/$A_d$/cross-polytope theory (the
   geometry); claims novelty narrowly on the unified construction + the
   $\delta p_\min$ mechanism.  Citations hardened by a `deep-research` run.
+- `notes/falsification_plan.md` -- methodological note (2026-07-31): what
+  would end the programme, as opposed to what would kill an architecture.
+  The contract point (software: API release; physics: the DOI) and the three
+  tiers already in use -- `notes/` non-binding, audit table binding row by
+  row, DOI public and immutable.  Revision is **renaming, not prohibition**
+  (semver: a core change is a MAJOR bump, said out loud).  The timing rule:
+  the failure mode is deciding *after* a result which part was
+  implementation.  Proposes **structural-commitment rows** in the audit table
+  so API-vs-implementation is a dated declaration.  Steps 0-6, with the
+  strongest asset being that the architecture space is finite and can fail by
+  **exhaustion**.
 - `notes/dcl_core_handoff_queue.md` -- **staging list, not a handoff**
   (opened 2026-07-30).  Accumulates what `dcl-core` will need when coding on
   the successor architecture begins: decisions, the code-level forks
