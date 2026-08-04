@@ -45,7 +45,7 @@ is choosing the moment deliberately rather than sliding into it.
 ### The three tiers already in use
 
 | Tier | Artefact | Status |
-|---|---|---|
+| --- | --- | --- |
 | 1 | `notes/` | **Non-binding.**  Iterative, revise freely, no obligation. |
 | 2 | `paper/sections/audit_table.tex` | **Binding, row by row**, with an explicit status per row. |
 | 3 | **DOI** (Zenodo) | **Public, immutable, timestamped.** |
@@ -64,7 +64,7 @@ commitment.
 versioning rule:
 
 | Change | Version | Announcement |
-|---|---|---|
+| --- | --- | --- |
 | better proof, better implementation | **patch** | none needed |
 | additional result, nothing withdrawn | **minor** | normal |
 | a core commitment changes | **MAJOR** | **said out loud** |
@@ -113,7 +113,7 @@ survives a change of session, a change of year, and a reader who was not there.
 **Candidate API list, to be ruled on (this note does not decide it):**
 
 | Commitment | Candidate status | Note |
-|---|---|---|
+| --- | --- | --- |
 | A=1 conservation | API | Low risk, low content (§1) |
 | Observational Univariance | API (methodological) | The criterion, not a claim |
 | Substrate discreteness | API -- **at what scale?** | Unfalsifiable without a scale (Step 3) |
@@ -122,6 +122,9 @@ survives a change of session, a change of year, and a reader who was not there.
 | Hop set / coordination | implementation | Paper IV precedent -- but declare it |
 | Simplex / face-lattice construction | implementation? | The successor space itself |
 | Lorentz invariance: exact or emergent | **must be declared** | §3.10 |
+| No unification-by-enlargement | **API — declared 2026-08-03** | §7.1; protects failure-by-exhaustion |
+| No anthropic explanation of parameters | **API — declared 2026-08-03** | §7 item 1; the foreseeable move if $\delta p_\min$ returns *fitted* |
+| Formalisation is not evidence | **methodological — declared 2026-08-03** | §7 item 4 |
 
 ---
 
@@ -197,7 +200,85 @@ retrievable with forward-pointing notices.
 
 ---
 
-## 7. The honest risk assessment
+## 7. Practices declined, and the shrink test (added 2026-08-03)
+
+Lessons taken from the string-theory programme.  Framing note first: string
+theory produced real results -- AdS/CFT, black-hole entropy counting, a large
+body of mathematics.  What follows concerns **specific practices that made
+falsification hard**, not the worth of the programme.
+
+**Declined, dated 2026-08-03:**
+
+1. **The anthropic escape.**  No parameter will be explained by observer
+   selection.  The exposure here is specific and foreseeable: if $\delta p_\min$
+   returns *fitted*, the available move is "$d = 3$ because that is where
+   observers are."  Declined **in advance**, before it is needed -- which is the
+   only time such a declaration means anything (§4).
+2. **Scale retreat.**  Extra dimensions were Planckian, then large, then warped,
+   as bounds tightened.  Each move was defensible alone and corrosive in
+   aggregate.  Step 3 already requires committing to a scale or a scale-free
+   prediction; this records the precedent and the reason.
+3. **Uniqueness or beauty as evidence.**  "The only consistent theory of X" is an
+   elegance argument doing evidential work.  Elegance orders the search; it never
+   enters the verdict ([[successor_geometries_simplex_face_lattice]] §6.2).
+4. **Internal mathematical success substituting for external test.**  The
+   uncomfortable one, because this programme is building both a Lean
+   formalisation and a category-theoretic account.  Both are valuable; neither is
+   evidence:
+
+   > **Machine-checked coherence proves the framework is *consistent*, not
+   > *correct*.**  A Lean-verified theorem about a wrong lattice is a correct
+   > theorem about nothing.
+
+   Formalisation must not become the deliverable.
+5. **Multiplying structure to fit** -- branes, fluxes, compactifications added as
+   required.  The local analogue is architecture-shopping, already named in §8 as
+   the primary risk.
+
+### 7.1 The finiteness commitment
+
+The architecture space is **finite** -- dozens of candidates, enumerated in
+[[successor_geometries_simplex_face_lattice]] §2 and §3.11.  Step 1's
+failure-by-exhaustion rests entirely on that, and it is this programme's largest
+structural advantage over any comparable framework: **string theory cannot fail
+by exhaustion, because its landscape is astronomically large.**
+
+Therefore:
+
+> **Treat any enlargement of the architecture space as a cost, not a neutral
+> move.**
+
+The six-tick accounting cycle enlarges it.  A5 enlarges it.  Every new free
+parameter enlarges it.  Each may be individually justified and still be a step
+toward a landscape -- and the crossing has **no natural warning signal**, which
+is why the rule has to be standing rather than applied case by case.
+
+**The specific temptation, named in advance.**  If none of A0--A6 passes
+cleanly, the attractive move will be *"they are all limits of something
+larger."*  That is the M-theory move (Witten, Strings '95: the five superstring
+theories as limits of one eleven-dimensional structure -- a real unification,
+and one whose central object still has no complete formulation thirty years on).
+It is also the step that **destroys finiteness**, because exhaustion stops being
+available the moment the space becomes a space of *embeddings* rather than a
+list.  Declined here, while it costs nothing and nothing is pressing.
+
+### 7.2 The shrink test
+
+For any proposed synthesis or unification:
+
+> **Does the total candidate space get smaller?**
+
+M-theory shrank five theories to one at the top *and* exploded the
+compactification space beneath.  Both happened; the second dominated.  So the
+criterion is not "is this a unification" but whether the **net** space contracts.
+A unification that reduces at one level while multiplying at another is how a
+landscape gets built -- one reasonable step at a time.
+
+Apply the test **before** adopting, not after.
+
+---
+
+## 8. The honest risk assessment
 
 The most likely failure mode is **not** a dramatic experimental miss.  It is
 **unfalsifiability by architecture-shopping** -- a slow drift in which each

@@ -309,7 +309,13 @@ internal-reference tag.
   implementation.  Proposes **structural-commitment rows** in the audit table
   so API-vs-implementation is a dated declaration.  Steps 0-6, with the
   strongest asset being that the architecture space is finite and can fail by
-  **exhaustion**.
+  **exhaustion**.  §7 (2026-08-03) records **practices declined** with
+  string theory as the case study -- no anthropic escape, no scale retreat,
+  no elegance-as-evidence, formalisation is not evidence, no multiplying
+  structure to fit -- plus the **finiteness commitment** (treat any
+  enlargement of the architecture space as a cost; the M-theory
+  "all limits of something larger" move is declined in advance) and the
+  **shrink test** for any proposed synthesis.
 - `notes/dcl_core_handoff_queue.md` -- **staging list, not a handoff**
   (opened 2026-07-30).  Accumulates what `dcl-core` will need when coding on
   the successor architecture begins: decisions, the code-level forks
