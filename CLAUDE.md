@@ -299,6 +299,15 @@ internal-reference tag.
   (emergent dimension) and $D_d$/$A_d$/cross-polytope theory (the
   geometry); claims novelty narrowly on the unified construction + the
   $\delta p_\min$ mechanism.  Citations hardened by a `deep-research` run.
+- `notes/accounting_rules.md` -- **living register** (opened 2026-08-06): every
+  accounting rule with its status (STRUCTURAL / DECLARED / ASSUMED / FORK /
+  WITHDRAWN), whether it survives relabelling a convention, and what fixes it.
+  Opened after a step-by-step pass found rules carried since Paper I that are
+  **assumptions worn as structure**.  A2 ("accounting on even ticks")
+  **withdrawn** -- not translation-invariant, since which sublattice is "even"
+  depends on the origin; the *period* survives, the *phase* is gauge.  A3 (the
+  period itself) has nothing fixing it.  A4 (is a tick a rhombic hop or a cubic
+  step?) must be settled before the register can be consistent.
 - `notes/falsification_plan.md` -- methodological note (2026-07-31): what
   would end the programme, as opposed to what would kill an architecture.
   The contract point (software: API release; physics: the DOI) and the three
