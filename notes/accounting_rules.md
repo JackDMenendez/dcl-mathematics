@@ -50,7 +50,7 @@ Four tests, applied to every rule.  The first has been doing most of the work.
 | A1 | Total amplitude is one at every tick | **STRUCTURAL** | yes | the founding axiom |
 | A2 | Accounting happens on **even** ticks | **WITHDRAWN** | **no** | nothing -- see §A2 |
 | A3 | The accounting **period** is 2 | **ASSUMED** | yes (period is invariant) | **nothing** -- see §A3 |
-| A4 | The tick is the rhombic hop | **ASSUMED** | yes | unpinned -- see §A4 |
+| A4 | The tick is the **cubic step**; a rhombic hop is three ticks | **SETTLED** 2026-08-13 | yes | §A4/A5 -- option 2 adopted |
 | A5 | No state exists between accountings | **DECLARED** 2026-08-01, **under test** | yes | declaration + **T15**; see §A5 |
 | A6 | Tick count is relative; each session has its own clock | **DECLARED** | yes | supersedes A7; see §A6 |
 | A7 | Global parity synchronisation across sessions | **WITHDRAWN** | no | superseded by A6 |
@@ -96,17 +96,58 @@ choice for another.  *Gain:* the new one is tied to the double cover, hence
 constrained by a **measured** result (neutron 4π periodicity).  An unconstrained
 convention becomes a parameter with an experiment attached.
 
-### A4 -- what is a tick?
+### A4 -- what is a tick?  (SETTLED 2026-08-13)
 
-Unresolved between two readings, and the register cannot be consistent until it
-is settled:
+The **cubic step**.  A rhombic hop is three ticks; a parity cycle is six.
+Intermediates are traversed and cost time; they are simply never accounted.
 
-- the **rhombic hop** (one destination reached), or
-- the **cubic step** (one scaffold move), in which case a rhombic hop is three
-  ticks and a parity cycle is six.
+See §A4/A5 above for the fork this resolves and why options 1 and 3 were set
+aside.  Note the consequence for **A3**: with the tick at the cubic step, the
+accounting period of 6 is a *duration* in ticks and coincides with the girth --
+which is the derived reading, not the 3! multiplicity that §6.1 warns against
+conflating with it.
 
-A5 assumes the first (no state between accountings ⇒ the cubic steps are not
-ticks).  Some earlier discussion assumed the second.  **Pick one.**
+### A4/A5 -- what does reaching an intermediate mean?  (resolved 2026-08-13)
+
+Three readings were on the table.  A4 and A5 were both waiting on this fork.
+
+**Option 1 -- intermediates don't exist; a transition is one atomic hop.**
+Viable and cheapest.  But it makes the scaffold **pure notation**: no routes, so
+route-count uniformity is vacuous, the S₃ stabiliser is a fact about the cube's
+symmetry with nothing traversing it, and **the A5 proton probe becomes
+meaningless** -- there is no degeneracy left to lift.  Retained as the **escape
+hatch** if option 2 fails.
+
+**Option 2 -- intermediates cost hops but are not accounted.**  **ADOPTED
+(author, 2026-08-13.)**  The only reading in which routes exist -- so
+multiplicity is real and liftable -- *and* nothing is recorded, so interference
+over indistinguishable paths survives.  That combination is precisely what makes
+the proton probe possible.
+
+*Its cost:* relative phase between sessions goes from mod 2 to mod 6, worsening
+the synchronisation problem.  But **A8's proposed resolution generalises**: if
+entangled pairs are same-parity by construction because they were created at a
+single accounting event, they are same-*phase* by construction for the same
+reason -- the argument is indifferent to whether the period is 2 or 6.  So the
+cost is that **A8 carries more weight**, not that option 2 is impossible.
+
+**Option 3 -- intermediates are accounted (sub-tick trembling drives the
+search).  CLOSED**, and by something sharper than a declaration.  **Accounting is
+recording** ([[coherence_history_invariant]]): decoherence writes a permanent
+record by A=1 accounting.  So accounting at intermediates records *which route*,
+the paths become distinguishable, the superposition over them collapses, and the
+four-way coherent return goes with it.  **Interference over indistinguishable
+paths is observed.**  Option 3 therefore conflicts with data, not merely with A5.
+
+*And its motivation is met without it.*  The trembling is already present at the
+rhombic level: the rest state **must** move every tick, since there is no
+zero-displacement generator.  That is the dance and that is the exploration.
+Sub-tick structure is not needed to supply it.
+
+**Consequences for the register:** A4 is settled -- the tick is the **cubic
+step**, a rhombic hop is three ticks, and a parity cycle is six.  A5 stands as
+declared (no accounting between), now with its scope explicit: intermediates are
+traversed, cost time, and are never accounted.
 
 ### A5 -- gauge, or only degenerate?  (added 2026-08-06)
 
@@ -196,8 +237,10 @@ whether a site is there.
 
 ## Open Questions
 
-1. **Settle A4** (what is a tick).  Nothing else in the register can be made
-   consistent until this is fixed.
+1. ~~Settle A4~~ **DONE 2026-08-13** -- the tick is the cubic step (§A4/A5).
+   Consequential follow-up: does the accounting period now follow from A4 plus
+   the girth (6 cubic ticks = one parity cycle), or is it still free?  If it
+   follows, **A3 is no longer ASSUMED.**
 2. **Settle A6** (offset or rate).  One is free, the other inherits a famous
    objection.
 3. **Settle A3** via the identity, or accept that the period is a free
