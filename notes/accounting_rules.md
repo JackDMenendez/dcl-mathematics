@@ -26,6 +26,10 @@ Four tests, applied to every rule.  The first has been doing most of the work.
    [[platos_cave_invariant_observer]] §4.9).
 4. **What fixes the value?**  If nothing does, it is a free parameter wearing
    the costume of a fact.
+5. **Is it gauge, or merely degenerate?**  *(added 2026-08-06)*  A degenerate
+   degree of freedom **looks** gauge until something lifts the degeneracy; true
+   gauge can never be lifted, by anything.  So for any rule declaring something
+   unobservable, ask: **what perturbation would lift it, and has anyone tried?**
 
 **Status legend**
 
@@ -47,7 +51,7 @@ Four tests, applied to every rule.  The first has been doing most of the work.
 | A2 | Accounting happens on **even** ticks | **WITHDRAWN** | **no** | nothing -- see §A2 |
 | A3 | The accounting **period** is 2 | **ASSUMED** | yes (period is invariant) | **nothing** -- see §A3 |
 | A4 | The tick is the rhombic hop | **ASSUMED** | yes | unpinned -- see §A4 |
-| A5 | No state exists between accountings | **DECLARED** 2026-08-01 | yes | declaration + **T15** |
+| A5 | No state exists between accountings | **DECLARED** 2026-08-01, **under test** | yes | declaration + **T15**; see §A5 |
 | A6 | Tick count is relative; each session has its own clock | **DECLARED** | yes | supersedes A7; see §A6 |
 | A7 | Global parity synchronisation across sessions | **WITHDRAWN** | no | superseded by A6 |
 | A8 | Joint accounting requires *simultaneous* accounting | **FORK** | yes | see §A8 |
@@ -103,6 +107,41 @@ is settled:
 
 A5 assumes the first (no state between accountings ⇒ the cubic steps are not
 ticks).  Some earlier discussion assumed the second.  **Pick one.**
+
+### A5 -- gauge, or only degenerate?  (added 2026-08-06)
+
+Declared 2026-08-01 with **T15** as its test.  But look at *why* it was
+declared: the argument was that route multiplicity is **uniform** -- six routes
+to every destination, so the count cancels and no observable can depend on it.
+
+Uniformity is a statement about a **degeneracy**, and degeneracies get lifted.
+So A5 may be recording degeneracy rather than gauge, which are different things
+with different consequences (test 5 above).
+
+**Candidate perturbation (author, 2026-08-06): a proton session.**  The hydrogen
+experiments suggest the electron *searches* for the Bohr radius, and that the
+search requires fluctuation that only a second session supplies.  If a proton
+lifts the six-fold route degeneracy -- making multiplicity direction-dependent
+-- then **the bias is the search**, and no individual route ever becomes
+observable: *which* route stays gauge, *how many* does not.
+
+**The test.**  Introduce a proton session; recount routes per destination.
+
+- **uniform** -- A5 stands, the scaffold is gauge, T15 should pass.
+- **non-uniform** -- the scaffold is **physical in the presence of matter**, A5
+  is withdrawn, and the route structure is doing dynamical work.
+
+Either outcome is informative, and it is cheap: pure counting on a small
+neighbourhood, no amplitudes required.
+
+**Related framing note.**  The localisation worry raised earlier in the week was
+partly misposed.  A *free* electron is delocalised in standard quantum mechanics
+too, so nothing needed explaining there.  What needs a mechanism is a **bound**
+electron, and the standard one applies: a defect pulls a bound state out of the
+band, and the proton is the defect.  One quantitative caveat -- in three
+dimensions an attractive well binds only above a threshold strength, unlike one
+or two dimensions where any attraction binds.  Whether the proton coupling
+clears that threshold is a computable check.
 
 ### A6 -- relative clocks: offset or rate?
 
@@ -165,9 +204,12 @@ whether a site is there.
    parameter and declare it as such.
 4. **Resolve A8**, and if the same-parity resolution is adopted, run the
    simulation check.
-5. **Audit the remainder.**  This register was built from one week's discussion;
+5. **Run the proton test against A5** (§A5).  Cheapest live item in the
+   register: counting only, no amplitudes, and it decides whether A5 records
+   gauge or degeneracy.
+6. **Audit the remainder.**  This register was built from one week's discussion;
    rules carried since Paper I have not been swept.  Every one should be run
-   through the four tests above.
+   through the five tests above.
 
 ---
 
