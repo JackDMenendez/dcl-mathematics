@@ -62,3 +62,12 @@ blueprint/print/
 .DS_Store
 Thumbs.db
 .vsisolation/
+
+# notebook.tex build output (the .tex is the source; reference PDFs in
+# notes/ are deliberately not covered by this)
+notes/notebook.pdf
+.vsisolation/
+
+# draw.io scratch files -- auto-backup and temp, never source
+.$*.bkp
+.$*.dtmp
